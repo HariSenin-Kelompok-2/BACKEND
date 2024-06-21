@@ -1,7 +1,12 @@
 const { Router } = require("express");
 const router = Router();
 
-const routes = [require("./users.routes"), require("./category.routes"), require("./region.routes")];
+const routes = [
+  require("./users.routes"), 
+  require("./category.routes"), 
+  require("./region.routes"), 
+  require("./categorySysReq.routes")
+];
 for (const route of routes) {
   router.use("/api", route);
 }
