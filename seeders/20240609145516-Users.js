@@ -17,8 +17,9 @@ module.exports = {
     for (let i = 0; i < 10; i++) {
       data.push({
         id: crypto.randomUUID(),
-        name: "DUMMY NAME " + i,
+        username: "DUMMY NAME " + i,
         email: "dummyemail" + i + "@example.com",
+        regionId: "9cc44fcd-159b-43a1-8af8-6ee9ef6b4e73",
         password: "DUMMYPASSWORD",
       });
     }

@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Users.belongsTo(models.Region, { foreignKey: "regionId" });
     }
   }
   Users.init(
@@ -19,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.STRING(100),
       },
-      name: {
+      username: {
         type: DataTypes.STRING(50),
         allowNull: false,
       },

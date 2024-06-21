@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
       },
-      name: {
+      username: {
         type: Sequelize.STRING(50),
         allowNull: false,
       },
@@ -20,6 +20,10 @@ module.exports = {
       password: {
         type: Sequelize.STRING(100),
         allowNull: false,
+      },
+      regionId: {
+        allowNull: false,
+        type: Sequelize.UUID,
       },
       createdAt: {
         allowNull: false,

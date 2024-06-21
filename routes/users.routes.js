@@ -4,9 +4,9 @@ const router = Router();
 const { UserControllers } = require("../controllers");
 
 router.get("/users", UserControllers.getUsers);
-router.get("/users/:id", UserControllers.getUserDetail);
-router.post("/users", UserControllers.addUsers);
-router.put("/users/:id", UserControllers.updateUsers);
-router.delete("/users/:id", UserControllers.deleteUsers);
+router.get("/user/:id", UserControllers.getUserDetail);
+router.post("/user", UserControllers.addUsers);
+router.put("/user/:id", UserControllers.updateUsers);
+router.delete("/user/:id", UserControllers.deleteUsers);
 
 module.exports = router;
