@@ -3,6 +3,6 @@ module.exports = {
   CategoryControllers: require("./category.controllers"),
   RegionControllers: require("./region.controllers"),
   CategorySysReqControllers: require("./categorySysReq.controllers"),
-  FeatureControllers: require("./feature.controller"),
+  FeatureControllers: require("./feature.controllers"),
   ReviewControllers: require("./review.controllers")
 };
