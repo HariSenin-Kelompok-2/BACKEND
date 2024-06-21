@@ -5,8 +5,10 @@ const routes = [
   require("./users.routes"), 
   require("./category.routes"), 
   require("./region.routes"), 
-  require("./categorySysReq.routes")
+  require("./categorySysReq.routes"),
+  require("./feature.routes")
 ];
+
 for (const route of routes) {
   router.use("/api", route);
 }
