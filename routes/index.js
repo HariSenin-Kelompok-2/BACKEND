@@ -6,7 +6,8 @@ const routes = [
   require("./category.routes"), 
   require("./region.routes"), 
   require("./categorySysReq.routes"),
-  require("./feature.routes")
+  require("./feature.routes"),
+  require("./review.routes")
 ];
 
 for (const route of routes) {
