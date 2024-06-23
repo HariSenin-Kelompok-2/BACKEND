@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       products.hasMany(models.ScrollThumbnail)
+      products.hasOne(models.SysReqs)
     }
   }
   products.init({

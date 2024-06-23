@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const { SysReqs } = require("../controllers");
+const { SysReqsControllers } = require("../controllers");
 
-router.get('/sysreq', SysReqs.getSysReq);
+router.get('/sysreq', SysReqsControllers.getSysReq);
 
 module.exports = router

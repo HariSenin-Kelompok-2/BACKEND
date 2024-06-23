@@ -20,13 +20,13 @@ module.exports = {
           price: "10",
 
           discount: 10,
-          productId: "216329dc-3a36-4927-870f-3fd513b12d6b",
+          productId: "fa723e40-db02-46d4-84de-48d35b17be62",
         },
         {
           id: crypto.randomUUID(),
           price: "20",
           discount: 0,
-          productId: "8201758f-b3f3-456b-808d-440b25adac23",
+          productId: "fa723e40-db02-46d4-84de-48d35b17be62",
         },
       ],
       {}

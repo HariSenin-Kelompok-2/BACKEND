@@ -2,15 +2,12 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class SysReqs extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       // define association here
       SysReqs.belongsTo(models.products),
-      SysReqs.belongsTo(models.CategorySysReq)
+      SysReqs.belongsTo(models.CategorySysReq,
+        {foreignKey: "osId"}
+      );
     }
   }
   SysReqs.init({
@@ -30,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     osId: {
       allowNull: false,
       type: DataTypes.UUID,
+      references: {
+        model: "CategorySysReq",
+        key: "id",
+      }, 
     },
     processor: {
       allowNull: false,
@@ -50,11 +51,19 @@ module.exports = (sequelize, DataTypes) => {
     storage: {
       allowNull: false,
       type: DataTypes.STRING
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
     }
   }, {
     sequelize,
-    modelName: "SysReq",
+    modelName: "SysReqs",
   }
 );
-return SysReq;
+return SysReqs;
 };   

@@ -8,6 +8,6 @@ module.exports = {
   ProductControllers: require("./product.controllers"),
   ScrollThumbnailControllers: require("./scrollThumbnail.controllers"),
   PriceControllers: require("./price.controllers"),
-  SysReq: require("./sysReq.controllers"),
+  SysReqsControllers: require("./sysReq.controllers"),
 
 };
