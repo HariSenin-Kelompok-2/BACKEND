@@ -7,7 +7,9 @@ const routes = [
   require("./region.routes"), 
   require("./categorySysReq.routes"),
   require("./feature.routes"),
-  require("./review.routes")
+  require("./review.routes"),
+  require("./product.routes"),
+  require("./scrollThumbnail.routes"),
 ];
 
 for (const route of routes) {
