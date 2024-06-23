@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Category.belongsToMany(models.products, { through: "BridgeProductCategory" });
     }
   }
   Category.init(
