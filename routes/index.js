@@ -11,6 +11,7 @@ const routes = [
   require("./product.routes"),
   require("./scrollThumbnail.routes"),
   require("./price.routes"),
+  require("./priceList.routes"),
 ];
 
 for (const route of routes) {

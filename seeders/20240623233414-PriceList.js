@@ -13,7 +13,7 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      "Prices",
+      "PriceLists",
       [
         {
           id: crypto.randomUUID(),
