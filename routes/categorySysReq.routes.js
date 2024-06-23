@@ -3,4 +3,4 @@ const { CategorySysReqControllers } = require("../controllers");
 
 router.get("/categorysysreqs", CategorySysReqControllers.getCategorySysReqs);
 
-module.exports = router
+module.exports = router;

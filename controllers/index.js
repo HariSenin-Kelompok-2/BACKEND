@@ -7,4 +7,5 @@ module.exports = {
   ReviewControllers: require("./review.controllers"),
   ProductControllers: require("./product.controllers"),
   ScrollThumbnailControllers: require("./scrollThumbnail.controllers"),
+  PriceControllers: require("./price.controllers"),
 };
