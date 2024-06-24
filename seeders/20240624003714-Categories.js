@@ -12,19 +12,24 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-
-    const data = [];
-    for (let i = 0; i < 10; i++) {
-      data.push({
-        id: crypto.randomUUID(),
-        username: "DUMMY NAME " + i,
-        email: "dummyemail" + i + "@example.com",
-        regionId: "9cc44fcd-159b-43a1-8af8-6ee9ef6b4e73",
-        password: "DUMMYPASSWORD",
-      });
-    }
-
-    await queryInterface.bulkInsert("Users", data, {});
+    await queryInterface.bulkInsert(
+      "Categories",
+      [
+        {
+          id: "68e87fe5-ac33-4cdd-95e4-2b7c2fb2c0af",
+          name: "Open World",
+        },
+        {
+          id: "4c37e882-3aab-4411-b6e0-8337f9be6924",
+          name: "RPG",
+        },
+        {
+          id: "9a04c47f-7f8e-423a-a97f-4601bc5c2bab",
+          name: "Action",
+        },
+      ],
+      {}
+    );
   },
 
   async down(queryInterface, Sequelize) {
@@ -34,6 +39,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete("Users", null, {});
+    await queryInterface.bulkDelete('Categories', null, {});
   },
 };

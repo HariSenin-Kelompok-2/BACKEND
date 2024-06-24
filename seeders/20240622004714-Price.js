@@ -16,17 +16,16 @@ module.exports = {
       "Prices",
       [
         {
-          id: crypto.randomUUID(),
+          id: "2f5a0f24-7c1e-4dda-84bd-f4fef0222f2f",
           price: "10",
-
           discount: 10,
-          productId: "216329dc-3a36-4927-870f-3fd513b12d6b",
+          productId: "8459da6e-89a1-4931-a05a-2303ad43c532",
         },
         {
-          id: crypto.randomUUID(),
+          id: "46d9161c-1369-4d9f-be38-167335f58b4a",
           price: "20",
           discount: 0,
-          productId: "8201758f-b3f3-456b-808d-440b25adac23",
+          productId: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
         },
       ],
       {}
@@ -40,5 +39,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('Prices', null, {});
   },
 };
