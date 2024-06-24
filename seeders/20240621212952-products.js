@@ -18,7 +18,6 @@ module.exports = {
         {
           id: "8459da6e-89a1-4931-a05a-2303ad43c532",
           name: "Apex Legends",
-          price: "IDR. 0",
           short_description: "waw",
           release_date:"kapan-kapan",
           description: "waw keren",
@@ -31,7 +30,6 @@ module.exports = {
         {
           id: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
           name: "Elden Ring",
-          price: "IDR. 599.999",
           short_description: "waw2",
           release_date:"kapan-kapan2",
           description: "waw keren2",
