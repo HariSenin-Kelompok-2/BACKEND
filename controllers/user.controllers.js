@@ -1,4 +1,4 @@
-const { Users, Region } = require("../models");
+const { Users, Region, products} = require("../models");
 
 const getUsers = async (req, res, next) => {
   const data = await Users.findAll();
@@ -10,7 +10,7 @@ const getUserDetail = async (req, res, next) => {
     where: {
       id: req.params.id,
     },
-    include: [Region],
+    include: [Region, {model: products, as: "productOwned"}],
   });
 
   return res.status(200).json(data);
