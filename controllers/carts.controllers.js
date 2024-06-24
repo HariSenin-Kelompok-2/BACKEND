@@ -1,4 +1,4 @@
-const { Carts } = require("../models");
+const { Carts, Users } = require("../models");
 
 const getCarts = async (req, res) => {
   const carts = await Carts.findAll();

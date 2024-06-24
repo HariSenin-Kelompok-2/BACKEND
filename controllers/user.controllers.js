@@ -10,7 +10,7 @@ const getUserDetail = async (req, res, next) => {
     where: {
       id: req.params.id,
     },
-    include: [Region]
+    include: [Region],
   });
 
   return res.status(200).json(data);
