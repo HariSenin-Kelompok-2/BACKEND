@@ -9,5 +9,5 @@ module.exports = {
   ScrollThumbnailControllers: require("./scrollThumbnail.controllers"),
   PriceListControllers: require("./priceList.controllers"),
   SysReqsControllers: require("./sysReq.controllers"),
-
+  CartsControllers: require("./carts.controllers"),
 };

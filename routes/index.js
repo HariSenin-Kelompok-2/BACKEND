@@ -12,6 +12,7 @@ const routes = [
   require("./scrollThumbnail.routes"),
   require("./pricelist.routes"),
   require("./sysReq.routes"),
+  require("./carts.routes"),
 ];
 
 for (const route of routes) {
