@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       products.hasMany(models.ScrollThumbnail);
       products.belongsToMany(models.Category, { through: "BridgeProductCategory" });
-      products.belongsToMany(models.Users, { through: "BridgeProductOwned" });
+      products.belongsToMany(models.Users, { through: "BridgeProductOwned" , as: "productOwned"});
       products.hasOne(models.SysReqs);
       products.hasMany(models.PriceList);
     }

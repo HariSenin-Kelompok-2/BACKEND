@@ -16,12 +16,10 @@ module.exports = (sequelize, DataTypes) => {
   BridgeProductOwned.init({
     userId: {
       allowNull: false,
-      primaryKey: true,
       type: DataTypes.UUID,
     },
     productId: {
       allowNull: false,
-      primaryKey: true,
       type: DataTypes.UUID,
     },
     createdAt: {
