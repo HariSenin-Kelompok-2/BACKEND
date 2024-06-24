@@ -10,7 +10,7 @@ const routes = [
   require("./review.routes"),
   require("./product.routes"),
   require("./scrollThumbnail.routes"),
-  require("./price.routes"),
+  require("./pricelist.routes"),
 ];
 
 for (const route of routes) {
