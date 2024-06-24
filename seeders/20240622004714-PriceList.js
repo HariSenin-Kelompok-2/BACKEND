@@ -13,20 +13,20 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      "Prices",
+      "pricelists",
       [
         {
           id: crypto.randomUUID(),
-          price: "10",
+          price: "Rp.8,999",
 
           discount: 10,
-          productId: "216329dc-3a36-4927-870f-3fd513b12d6b",
+          productId: "99d1dbb7-d6fc-4e41-bc94-e8af61400f34",
         },
         {
           id: crypto.randomUUID(),
-          price: "20",
+          price: "Rp.8,9992",
           discount: 0,
-          productId: "8201758f-b3f3-456b-808d-440b25adac23",
+          productId: "d35467b8-7fb8-46fc-af66-116dfba11581",
         },
       ],
       {}
