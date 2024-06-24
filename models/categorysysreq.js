@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      CategorySysReq.hasOne(models.SysReqs,
+        {foreignKey: 'osId'}
+      )
     }
   }
   CategorySysReq.init({
