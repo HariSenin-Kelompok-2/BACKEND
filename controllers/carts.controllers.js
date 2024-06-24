@@ -1,7 +1,7 @@
-const { Carts, Users } = require("../models");
+const { Carts, Users, PriceList } = require("../models");
 
 const getCarts = async (req, res) => {
-  const carts = await Carts.findAll();
+  const carts = await Carts.findAll({ include: [Users, PriceList] });
   return res.status(200).json({ code: 200, message: "success", data: carts });
 };
 

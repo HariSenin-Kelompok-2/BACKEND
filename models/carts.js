@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // Carts.belongsTo(models.Users);
-      // Carts.belongsTo(models.PriceList);
+      Carts.belongsTo(models.Users, { foreignKey: "userId" });
+      Carts.belongsTo(models.PriceList, { foreignKey: "priceListId" });
     }
   }
   Carts.init(
@@ -20,14 +20,14 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.UUID,
       },
-      priceListId: {
-        allowNull: false,
-        type: DataTypes.UUID,
-      },
-      usersId: {
-        allowNull: false,
-        type: DataTypes.UUID,
-      },
+      // priceListId: {
+      //   allowNull: false,
+      //   type: DataTypes.UUID,
+      // },
+      // UserId: {
+      //   allowNull: false,
+      //   type: DataTypes.UUID,
+      // },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,

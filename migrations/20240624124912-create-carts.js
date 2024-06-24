@@ -19,7 +19,7 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
-      usersId: {
+      UserId: {
         allowNull: false,
         type: Sequelize.UUID,
         references: {
