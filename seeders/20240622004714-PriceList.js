@@ -13,19 +13,19 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      "Prices",
+      "pricelists",
       [
         {
-          id: "2f5a0f24-7c1e-4dda-84bd-f4fef0222f2f",
-          price: "10",
+          id: "0030d395-1e25-4c76-a481-1e678876c331",
+          price: "Rp.8,999",
           discount: 10,
-          productId: "8459da6e-89a1-4931-a05a-2303ad43c532",
+          productId: "99d1dbb7-d6fc-4e41-bc94-e8af61400f34",
         },
         {
-          id: "46d9161c-1369-4d9f-be38-167335f58b4a",
-          price: "20",
+          id: "f122d34b-bc15-4e54-a243-aa78aa43fa58",
+          price: "Rp.8,9992",
           discount: 0,
-          productId: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
+          productId: "99d1dbb7-d6fc-4e41-bc94-e8af61400f34",
         },
       ],
       {}
@@ -39,6 +39,5 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Prices', null, {});
   },
 };
