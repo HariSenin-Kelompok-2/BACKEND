@@ -13,19 +13,19 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      "Regions",
+      "pricelists",
       [
         {
-          id: "b6f70246-6ac3-46f9-969c-be101be68a56",
-          name: "Indonesia",
+          id: "0030d395-1e25-4c76-a481-1e678876c331",
+          price: "Rp.8,999",
+          discount: 10,
+          productId: "99d1dbb7-d6fc-4e41-bc94-e8af61400f34",
         },
         {
-          id: "55e8eb78-d6e4-4e1c-94cc-0f6fc898664a",
-          name: "Vietnam",
-        },
-        {
-          id: "78cb05f7-1045-4fab-b936-f8c7f0e74c9f",
-          name: "China",
+          id: "f122d34b-bc15-4e54-a243-aa78aa43fa58",
+          price: "Rp.8,9992",
+          discount: 0,
+          productId: "99d1dbb7-d6fc-4e41-bc94-e8af61400f34",
         },
       ],
       {}
@@ -39,6 +39,5 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Regions', null, {});
   },
 };

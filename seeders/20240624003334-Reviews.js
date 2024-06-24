@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up (queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -11,34 +11,29 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-     */
+    */
     await queryInterface.bulkInsert(
-      "Prices",
+      "Reviews",
       [
         {
           id: crypto.randomUUID(),
-          price: "10",
-
-          discount: 10,
-          productId: "fa723e40-db02-46d4-84de-48d35b17be62",
-        },
-        {
-          id: crypto.randomUUID(),
-          price: "20",
-          discount: 0,
-          productId: "fa723e40-db02-46d4-84de-48d35b17be62",
+          content: "baguss sekali",
+          isRecommend: true,
+          userId: "9cc44fcd-159b-43a1-8af8-6ee9ef6b4e73",
+          productId: "9cc44fcd-159b-43a1-8af8-6ee9ef6b4e75",
         },
       ],
       {}
     );
   },
 
-  async down(queryInterface, Sequelize) {
+  async down (queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-  },
+    await queryInterface.bulkDelete('Reviews', null, {});
+  }
 };
