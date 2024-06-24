@@ -18,11 +18,23 @@ module.exports = {
       },
       userId: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.UUID,
+        references: {
+          model: "Users",
+          key: "id"
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
       },
       productId: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.UUID,
+        references: {
+          model: 'products',
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
       },
       createdAt: {
         allowNull: false,
