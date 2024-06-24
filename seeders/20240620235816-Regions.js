@@ -16,15 +16,15 @@ module.exports = {
       "Regions",
       [
         {
-          id: crypto.randomUUID(),
+          id: "b6f70246-6ac3-46f9-969c-be101be68a56",
           name: "Indonesia",
         },
         {
-          id: crypto.randomUUID(),
+          id: "55e8eb78-d6e4-4e1c-94cc-0f6fc898664a",
           name: "Vietnam",
         },
         {
-          id: crypto.randomUUID(),
+          id: "78cb05f7-1045-4fab-b936-f8c7f0e74c9f",
           name: "China",
         },
       ],
@@ -39,5 +39,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('Regions', null, {});
   },
 };

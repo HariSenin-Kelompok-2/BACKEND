@@ -16,17 +16,16 @@ module.exports = {
       "pricelists",
       [
         {
-          id: crypto.randomUUID(),
+          id: "0030d395-1e25-4c76-a481-1e678876c331",
           price: "Rp.8,999",
-
           discount: 10,
           productId: "99d1dbb7-d6fc-4e41-bc94-e8af61400f34",
         },
         {
-          id: crypto.randomUUID(),
+          id: "f122d34b-bc15-4e54-a243-aa78aa43fa58",
           price: "Rp.8,9992",
           discount: 0,
-          productId: "d35467b8-7fb8-46fc-af66-116dfba11581",
+          productId: "99d1dbb7-d6fc-4e41-bc94-e8af61400f34",
         },
       ],
       {}
