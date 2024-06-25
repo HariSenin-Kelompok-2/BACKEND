@@ -13,7 +13,7 @@ module.exports = {
         }
 
       },
-      featuresId: {
+      featureId: {
         type: Sequelize.UUID,
         allowNull:false,
         primaryKey:true,
