@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Feature extends Model {
+  class BridgeProductFeatures extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,34 +11,28 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Feature.belongsToMany(models.products, { through: "BridgeProductFeatures" , as: "productFeatures"});
     }
   }
-  Feature.init({
-    id: {
+  BridgeProductFeatures.init({
+    productId: {
       allowNull: false,
-      primaryKey: true,
       type: DataTypes.UUID,
     },
-    name: {
+    featureId: {
       allowNull: false,
-      type: DataTypes.STRING(50)
-    },
-    icon: {
-      allowNull: false,
-      type: DataTypes.TEXT
+      type: DataTypes.UUID,
     },
     createdAt: {
       allowNull: false,
-      type: DataTypes.DATE,
+      type: DataTypes.DATE
     },
     updatedAt: {
       allowNull: false,
-      type: DataTypes.DATE,
+      type: DataTypes.DATE
     }
   }, {
     sequelize,
-    modelName: 'Feature',
+    modelName: 'BridgeProductFeatures',
   });
-  return Feature;
+  return BridgeProductFeatures;
 };

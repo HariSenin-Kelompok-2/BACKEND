@@ -10,8 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       products.hasMany(models.ScrollThumbnail);
-      products.belongsToMany(models.Category, { through: "BridgeProductCategory" });
+      products.belongsToMany(models.Category, { through: "BridgeProductCategory"});
       products.belongsToMany(models.Users, { through: "BridgeProductOwned" , as: "productOwned"});
+      products.belongsToMany(models.Feature, { through: "BridgeProductFeatures" , as: "productFeatures"});
       products.hasOne(models.SysReqs);
       products.hasMany(models.PriceList);
     }
