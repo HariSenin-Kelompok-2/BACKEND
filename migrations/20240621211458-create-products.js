@@ -13,10 +13,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      price: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
       short_description: {
         type: Sequelize.TEXT,
         allowNull: false
