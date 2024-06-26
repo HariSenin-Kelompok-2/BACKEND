@@ -24,6 +24,12 @@ module.exports = {
       regionId: {
         allowNull: false,
         type: Sequelize.UUID,
+        references: {
+          model: "Regions",
+          key: 'id'
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       createdAt: {
         allowNull: false,

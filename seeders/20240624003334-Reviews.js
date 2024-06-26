@@ -19,8 +19,8 @@ module.exports = {
           id: crypto.randomUUID(),
           content: "baguss sekali",
           isRecommend: true,
-          userId: "9cc44fcd-159b-43a1-8af8-6ee9ef6b4e73",
-          productId: "9cc44fcd-159b-43a1-8af8-6ee9ef6b4e75",
+          userId: "b2c8d9b5-64a1-4688-a4f6-fd2eadb0c52e",
+          productId: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
         },
       ],
       {}
