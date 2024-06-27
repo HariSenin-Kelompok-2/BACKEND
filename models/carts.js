@@ -20,14 +20,14 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.UUID,
       },
-      // priceListId: {
-      //   allowNull: false,
-      //   type: DataTypes.UUID,
-      // },
-      // UserId: {
-      //   allowNull: false,
-      //   type: DataTypes.UUID,
-      // },
+      priceListId: {
+        allowNull: false,
+        type: DataTypes.UUID,
+      },
+      userId: {
+        allowNull: false,
+        type: DataTypes.UUID,
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,

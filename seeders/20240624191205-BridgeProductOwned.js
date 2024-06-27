@@ -19,6 +19,10 @@ module.exports = {
       },
       {
         productId: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
+        userId: "5194f115-92c4-405c-905e-a37aaee94ad4",
+      },
+      {
+        productId: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
         userId: "cc75df37-ce40-4395-ae31-0a7e982cf68e",
       },
     ], {});
