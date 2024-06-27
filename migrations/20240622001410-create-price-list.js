@@ -17,10 +17,6 @@ module.exports = {
         allowNull: true,
         type: Sequelize.INTEGER(20),
       },
-      // product_id: {
-      //   allowNull: false,
-      //   type: Sequelize.STRING(20),
-      // },
       productId: {
         allowNull: false,
         type: Sequelize.UUID,
