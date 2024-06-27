@@ -1,5 +1,8 @@
 "use strict";
 const { Model } = require("sequelize");
+const bcrypt = require("bcrypt");
+const hashPassword = require("../services/hashPassword");
+
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
     /**
@@ -11,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Users.belongsTo(models.Region, { foreignKey: "regionId" });
       Users.hasMany(models.Carts, { foreignKey: "userId" });
-      Users.belongsToMany(models.products, { through: "BridgeProductOwned", as: "productOwned"});
+      Users.belongsToMany(models.products, { through: "BridgeProductOwned", as: "productOwned" });
     }
   }
   Users.init(
@@ -23,11 +26,16 @@ module.exports = (sequelize, DataTypes) => {
       },
       username: {
         type: DataTypes.STRING(50),
+        unique: true,
         allowNull: false,
       },
       email: {
         type: DataTypes.STRING(50),
+        unique: true,
         allowNull: false,
+        validate: {
+          isEmail: true,
+        },
       },
       password: {
         type: DataTypes.STRING(100),
@@ -43,9 +51,19 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
+      hooks: {
+        beforeCreate: async (user) => {
+          if (user.password) {
+            user.password = await hashPassword(user.password);
+          }
+        },
+      },
       sequelize,
       modelName: "Users",
     }
   );
+  Users.prototype.isCorrectPassword = async(reqPassword, passwordDB) => {
+    return await bcrypt.compareSync(reqPassword, passwordDB);
+  }
   return Users;
 };
