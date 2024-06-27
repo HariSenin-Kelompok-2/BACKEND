@@ -41,6 +41,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(100),
         allowNull: false,
       },
+      regionId: {
+        allowNull: false,
+        type: DataTypes.UUID,
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
