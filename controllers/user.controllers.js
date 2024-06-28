@@ -1,17 +1,5 @@
 const { Users, Region, products, Carts, PriceList } = require("../models");
-const jwt = require("jsonwebtoken");
-
-const signToken = (id) => {
-  return jwt.sign(
-    {
-      id,
-    },
-    process.env.JWT_SECRET,
-    {
-      expiresIn: process.env.JWT_EXPIRES_IN,
-    }
-  );
-};
+const { signToken } = require("../services");
 
 const getUsers = async (req, res, next) => {
   const data = await Users.findAll({
@@ -139,7 +127,8 @@ const registerUser = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       message: "Validasi Error",
-      error: error.errors.map(err => err.message),
+      // error: error.errors.map(err => err.message),
+      error
     });
   }
 };
