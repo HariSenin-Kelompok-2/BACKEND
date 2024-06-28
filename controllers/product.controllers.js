@@ -1,11 +1,26 @@
-const {products, Category, PriceList, Feature} = require("../models");
+const {products, Category, PriceList, Feature, SysReqs, CategorySysReq} = require("../models");
 
 const getProductDetail = async (req, res, next) => {
     const data = await products.findOne({
       where: {
         id: req.params.id,
       },
-      include: [Category, PriceList, {model: Feature, as: "productFeatures"}]
+      include: [
+        Category, 
+        PriceList, 
+        {
+          model: Feature, 
+          as: "productFeatures"
+        }, 
+        {
+          model: SysReqs,
+          include: [
+            {
+              model: CategorySysReq
+            }
+          ]
+        }
+      ]
     });
     return res.status(200).json(data);
   };

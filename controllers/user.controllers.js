@@ -37,7 +37,7 @@ const getUsers = async (req, res, next) => {
 const getUserDetail = async (req, res, next) => {
   const data = await Users.findOne({
     where: {
-      id: req.params.id,
+      id: req.currentUser.id,
     },
     attributes: ["username", "email"],
     include: [
@@ -127,8 +127,7 @@ const registerUser = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       message: "Validasi Error",
-      // error: error.errors.map(err => err.message),
-      error
+      error: error.errors.map(err => err.message),
     });
   }
 };
@@ -160,7 +159,7 @@ const updateUsers = async (req, res, next) => {
   const { username, email, password, region } = req.body;
   const data = await Users.findOne({
     where: {
-      id: req.params.id,
+      id: req.currentUser.id,
     },
   });
 
@@ -201,6 +200,18 @@ const updateUsers = async (req, res, next) => {
   }
 
   if (username) {
+    const existUsername = await Users.findOne({
+      where: {
+        username,
+      },
+    });
+
+    if (existUsername && existUsername.id !== data.id) {
+      return res.status(400).json({
+        message: "Username sudah digunakan",
+      });
+    }
+
     data.username = username;
   }
 
@@ -215,7 +226,7 @@ const updateUsers = async (req, res, next) => {
 const deleteUsers = async (req, res, next) => {
   const data = await Users.findOne({
     where: {
-      id: req.params.id,
+      id: req.currentUser.id,
     },
   });
 
