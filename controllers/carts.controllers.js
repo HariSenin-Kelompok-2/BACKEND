@@ -105,8 +105,8 @@ const deleteCartbyId = async (req, res) => {
     const cart = await Carts.findOne({ where: { id, userId } });
 
     if (!cart) {
-      return res.status(404).json({
-        code: 404,
+      return res.status(200).json({
+        code: 200,
         message: "Cart not found",
       });
     }
