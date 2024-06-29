@@ -107,10 +107,10 @@ const deleteReview = async (req, res) => {
 
     const review = await Review.findOne({ where: { id, userId } });
 
-    if (!review) {
+    if (review.length === 0) {
       return res.status(200).json({
         code: 200,
-        message: "Review not found",
+        message: "Reviews are empty",
       });
     }
 
