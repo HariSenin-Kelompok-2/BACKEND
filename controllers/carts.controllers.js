@@ -2,7 +2,9 @@ const { Carts, Users, PriceList, products } = require("../models");
 
 const getCarts = async (req, res) => {
   try {
+    const userId = req.currentUser.id;
     const carts = await Carts.findAll({
+      where: { userId },
       include: [
         { model: Users },
         {
@@ -17,19 +19,19 @@ const getCarts = async (req, res) => {
       ],
     });
 
-    const cartCount = await Carts.count();
+    const cartCount = await Carts.count({ where: { userId } });
 
     if (carts.length === 0) {
       return res.status(200).json({
         code: 200,
-        message: "Your carts is empty",
+        message: "Your carts are empty",
         cartCount: cartCount,
       });
     }
 
     return res.status(200).json({
       code: 200,
-      message: "Get all your carts are cuccess",
+      message: "Get all your carts are success",
       data: carts,
       cartCount: cartCount,
     });
@@ -44,7 +46,8 @@ const getCarts = async (req, res) => {
 
 const addCart = async (req, res) => {
   try {
-    const { priceListId, userId } = req.body;
+    const { priceListId } = req.body;
+    const userId = req.currentUser.id;
 
     const existingCart = await Carts.findOne({
       where: { priceListId, userId },
@@ -98,7 +101,8 @@ const addCart = async (req, res) => {
 const deleteCartbyId = async (req, res) => {
   try {
     const { id } = req.params;
-    const cart = await Carts.findByPk(id);
+    const userId = req.currentUser.id;
+    const cart = await Carts.findOne({ where: { id, userId } });
 
     if (!cart) {
       return res.status(404).json({
@@ -124,9 +128,8 @@ const deleteCartbyId = async (req, res) => {
 
 const deleteAllCarts = async (req, res) => {
   try {
-    await Carts.destroy({
-      where: {},
-    });
+    const userId = req.currentUser.id;
+    await Carts.destroy({ where: { userId } });
 
     return res.status(200).json({
       code: 200,
