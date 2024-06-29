@@ -1,8 +1,28 @@
 const { Review } = require("../models");
 
 const getReview = async (req, res) => {
-  const review = await Review.findAll();
-  return res.status(200).json({ code: 200, data: review });
+  try {
+    const reviews = await Review.findAll();
+
+    if (reviews.length === 0) {
+      return res.status(200).json({
+        code: 200,
+        message: "No reviews found",
+      });
+    }
+
+    return res.status(200).json({
+      code: 200,
+      message: "Reviews retrieved successfully",
+      data: reviews,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      code: 500,
+      message: "Internal Server Error",
+      error: error.message,
+    });
+  }
 };
 
 const addReview = async (req, res) => {
@@ -87,10 +107,10 @@ const deleteReview = async (req, res) => {
 
     const review = await Review.findOne({ where: { id, userId } });
 
-    if (!review) {
-      return res.status(404).json({
-        code: 404,
-        message: "Review not found",
+    if (review.length === 0) {
+      return res.status(200).json({
+        code: 200,
+        message: "Reviews are empty",
       });
     }
 
