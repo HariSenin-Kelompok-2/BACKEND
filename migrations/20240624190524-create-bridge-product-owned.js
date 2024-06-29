@@ -1,25 +1,29 @@
-"use strict";
+'use strict';
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Users", {
-      id: {
+    await queryInterface.createTable('BridgeProductOwneds', {
+      userId: {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        references: {
+          model:"Users",
+          key:"id"
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
-      name: {
-        type: Sequelize.STRING(50),
+      productId: {
         allowNull: false,
-      },
-      email: {
-        type: Sequelize.STRING(50),
-        allowNull: false,
-      },
-      password: {
-        type: Sequelize.STRING(100),
-        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.UUID,
+        references: {
+          model:"products",
+          key:"id"
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       createdAt: {
         allowNull: false,
@@ -30,10 +34,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-      },
+      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Users");
-  },
+    await queryInterface.dropTable('BridgeProductOwneds');
+  }
 };
