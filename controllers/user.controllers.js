@@ -35,7 +35,7 @@ const getUserDetail = async (req, res, next) => {
       },
       {
         model: Review,
-        attributes: ["content", "isRecommend"],
+        attributes: ["id", "content", "isRecommend"],
         include: {
           model: products,
           attributes: ["name"],
