@@ -7,7 +7,7 @@ const { AuthMiddlewares } = require("../middlewares");
 router.post("/user/register", UserControllers.registerUser);
 router.post("/user/login", UserControllers.loginUser);
 router.get("/user", AuthMiddlewares.checkToken, UserControllers.getUserDetail);
-router.put("/user", AuthMiddlewares.checkToken, UserControllers.updateUsers);
+router.patch("/user", AuthMiddlewares.checkToken, UserControllers.updateUsers);
 router.delete("/user", AuthMiddlewares.checkToken, UserControllers.deleteUsers);
 
 module.exports = router;
