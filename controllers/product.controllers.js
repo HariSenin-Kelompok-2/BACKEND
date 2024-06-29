@@ -74,11 +74,14 @@ const getProductDetail = async (req, res, next) => {
         },
     ]
   });
+  if (!data){
+    throw new Error("Data tidak ditemukan")
+  }  
   if(productData){
   return res.status(200).json({ 
                                 code: 200, 
                                 message: "success", 
-                                data: data })};
+                                data: data })};                          
   }
     catch (error){
   return res.status(404).json({
