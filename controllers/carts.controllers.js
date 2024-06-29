@@ -6,7 +6,7 @@ const getCarts = async (req, res) => {
     const carts = await Carts.findAll({
       where: { userId },
       include: [
-        { model: Users },
+        { model: Users, attributes: ["id", "username", "email"] },
         {
           model: PriceList,
           include: [
@@ -112,6 +112,7 @@ const deleteCartbyId = async (req, res) => {
     }
 
     await cart.destroy();
+    
     return res.status(200).json({
       code: 200,
       message: "Cart deleted successfully",
