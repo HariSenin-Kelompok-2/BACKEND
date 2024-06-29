@@ -25,6 +25,10 @@ module.exports = {
         productId: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
         categoryId: "4c37e882-3aab-4411-b6e0-8337f9be6924",
       },
+      {
+        productId: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
+        categoryId: "9a04c47f-7f8e-423a-a97f-4601bc5c2bab",
+      },
     ], {});
   },
 

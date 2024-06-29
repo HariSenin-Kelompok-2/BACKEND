@@ -1,38 +1,5 @@
 const { Users, Region, products, Carts, PriceList } = require("../models");
-const { signToken } = require("../services");
-
-const getUsers = async (req, res, next) => {
-  const data = await Users.findAll({
-    include: [
-      {
-        model: Region,
-        attributes: ["name"],
-      },
-      {
-        model: products,
-        as: "productOwned",
-        attributes: ["name"],
-      },
-      {
-        model: Carts,
-        attributes: ["id"],
-        include: [
-          {
-            model: PriceList,
-            attributes: ["price", "discount"],
-            include: [
-              {
-                model: products,
-                attributes: ["name"],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  });
-  return res.status(200).json(data);
-};
+const { signToken, hashPassword } = require("../services");
 
 const getUserDetail = async (req, res, next) => {
   const data = await Users.findOne({
@@ -100,34 +67,45 @@ const registerUser = async (req, res, next) => {
       res.status(404).json({ message: "region tidak ditemukan" });
     }
 
-    const exists = await Users.findOne({
+    const exist = await Users.findOne({
       where: {
         email,
       },
     });
 
-    if (exists) {
+    if (exist) {
       return res.status(400).json({
         message: "email sudah digunakan",
       });
     }
 
-    const data = await Users.create({
+    const newUser = await Users.create({
       id: crypto.randomUUID(),
       username,
       email,
-      password,
+      password: await hashPassword(password),
       regionId: existRegion.id,
+    });
+
+    const data = await Users.findByPk(newUser.id, {
+      attributes: ["id", "username", "email", "password"],
+      include: [
+        {
+          model: Region,
+          attributes: ["name"],
+        },
+      ],
     });
 
     const token = signToken(data.id);
     res.setHeader("Authorization", `Bearer ${token}`);
 
-    return res.status(201).json({ data });
+    return res.status(201).json({ status: 201, message: "berhasil register!", data });
   } catch (error) {
     res.status(400).json({
       message: "Validasi Error",
-      error: error.errors.map(err => err.message),
+      // error: error.errors.map(err => err.message),
+      error,
     });
   }
 };
@@ -145,6 +123,7 @@ const loginUser = async (req, res, next) => {
     },
   });
 
+
   if (!exist || !(await exist.isCorrectPassword(password, exist.password))) {
     return res.status(400).json({ message: "invalid email or password" });
   }
@@ -156,7 +135,7 @@ const loginUser = async (req, res, next) => {
 };
 
 const updateUsers = async (req, res, next) => {
-  const { username, email, password, region } = req.body;
+  const { username, email, password, passwordConfirm, region } = req.body;
   const data = await Users.findOne({
     where: {
       id: req.currentUser.id,
@@ -177,7 +156,7 @@ const updateUsers = async (req, res, next) => {
     });
 
     if (!existRegion) {
-      res.status(404).json({ message: "region tidak ditemukan" });
+      return res.status(404).json({ message: "region tidak ditemukan" });
     }
 
     data.regionId = existRegion.id;
@@ -216,11 +195,19 @@ const updateUsers = async (req, res, next) => {
   }
 
   if (password) {
-    data.password = password;
+    if (!passwordConfirm) {
+      return res.status(400).json({ message: "jika ubah password, password dan passwordConfirm harus diisi!" });
+    }
+
+    if (password !== passwordConfirm) {
+      return res.status(400).json({ message: "password dan passwordConfirm tidak cocok" });
+    }
+
+    data.password = await hashPassword(password);
   }
 
   await data.save();
-  return res.status(201).json(data);
+  return res.status(201).json({ status: "berhasil update user!", data });
 };
 
 const deleteUsers = async (req, res, next) => {
@@ -237,11 +224,13 @@ const deleteUsers = async (req, res, next) => {
   }
 
   await data.destroy();
-  return res.status(200).json(data);
+  return res.status(200).json({
+    message: "berhasil delete user!",
+    data
+  });
 };
 
 module.exports = {
-  getUsers,
   getUserDetail,
   updateUsers,
   deleteUsers,

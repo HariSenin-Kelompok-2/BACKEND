@@ -9,7 +9,7 @@ const checkToken = async (req, res, next) => {
   }
 
   if (!token) {
-    return res.status(400).json({ message: "token tidak ditemukan" });
+    return res.status(401).json({ message: "token tidak ditemukan" });
   }
 
   let decode;
