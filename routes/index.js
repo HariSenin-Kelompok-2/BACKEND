@@ -5,13 +5,8 @@ const routes = [
   require("./users.routes"),
   require("./category.routes"),
   require("./region.routes"),
-  require("./categorySysReq.routes"),
-  require("./feature.routes"),
-  require("./review.routes"),
   require("./product.routes"),
-  require("./scrollThumbnail.routes"),
-  require("./pricelist.routes"),
-  require("./sysReq.routes"),
+  require("./review.routes"),
   require("./carts.routes"),
 ];
 
