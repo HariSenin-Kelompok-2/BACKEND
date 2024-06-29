@@ -108,8 +108,8 @@ const deleteReview = async (req, res) => {
     const review = await Review.findOne({ where: { id, userId } });
 
     if (!review) {
-      return res.status(404).json({
-        code: 404,
+      return res.status(200).json({
+        code: 200,
         message: "Review not found",
       });
     }
