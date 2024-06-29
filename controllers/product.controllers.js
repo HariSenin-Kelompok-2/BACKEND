@@ -1,4 +1,4 @@
-const {products, Category, PriceList, Feature, SysReqs, CategorySysReq} = require("../models");
+const {products, Category, PriceList, Feature, SysReqs, CategorySysReq, Review} = require("../models");
 
 const getProductDetail = async (req, res, next) => {
     const data = await products.findOne({
@@ -19,6 +19,9 @@ const getProductDetail = async (req, res, next) => {
               model: CategorySysReq
             }
           ]
+        },
+        {
+          model: Review
         }
       ]
     });

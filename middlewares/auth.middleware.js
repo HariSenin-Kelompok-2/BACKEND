@@ -20,7 +20,6 @@ const checkToken = async (req, res, next) => {
   }
 
   const currentUser = await Users.findByPk(decode.id) 
-  console.log(currentUser);
 
   if (!currentUser) {
     return res.status(401).json({status: 401, message: "token sudah kadaluarsa"});

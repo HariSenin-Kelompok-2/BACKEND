@@ -1,5 +1,5 @@
-const { Users, Region, products, Carts, PriceList } = require("../models");
-const { signToken, hashPassword } = require("../services");
+const { Users, Region, products, Carts, PriceList, Review } = require("../models");
+const { signToken, hashPassword, checkUsername } = require("../services");
 
 const getUserDetail = async (req, res, next) => {
   const data = await Users.findOne({
@@ -33,6 +33,14 @@ const getUserDetail = async (req, res, next) => {
           },
         ],
       },
+      {
+        model: Review,
+        attributes: ["content", "isRecommend"],
+        include: {
+          model: products,
+          attributes: ["name"],
+        }
+      }
     ],
   });
 
@@ -46,6 +54,32 @@ const registerUser = async (req, res, next) => {
     if (!username || !email || !password || !region || !passwordConfirm) {
       return res.status(400).json({
         messsage: "username, email, password, passwordConfirm dan region harus diisi!",
+      });
+    }
+
+    if (!checkUsername(username)) {
+      return res.status(400).json({ message: "username hanya boleh terdiri dari huruf dan angka" });
+    }
+
+    const existUsername = await Users.findOne({
+      where: {
+        username,
+      },
+    });
+
+    if (existUsername) {
+      return res.status(400).json({ message: "username sudah digunakan" });
+    }
+
+    const existEmail = await Users.findOne({
+      where: {
+        email,
+      },
+    });
+
+    if (existEmail) {
+      return res.status(400).json({
+        message: "email sudah digunakan",
       });
     }
 
@@ -65,18 +99,6 @@ const registerUser = async (req, res, next) => {
 
     if (!existRegion) {
       res.status(404).json({ message: "region tidak ditemukan" });
-    }
-
-    const exist = await Users.findOne({
-      where: {
-        email,
-      },
-    });
-
-    if (exist) {
-      return res.status(400).json({
-        message: "email sudah digunakan",
-      });
     }
 
     const newUser = await Users.create({
@@ -104,34 +126,33 @@ const registerUser = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       message: "Validasi Error",
-      // error: error.errors.map(err => err.message),
-      error,
+      error: error.errors.map((err) => err.message),
+      // error,
     });
   }
 };
 
 const loginUser = async (req, res, next) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).json({ message: "email dan password harus diisi!" });
+  if (!username || !password) {
+    return res.status(400).json({ message: "username dan password harus diisi!" });
   }
 
   const exist = await Users.findOne({
     where: {
-      email,
+      username,
     },
   });
 
-
   if (!exist || !(await exist.isCorrectPassword(password, exist.password))) {
-    return res.status(400).json({ message: "invalid email or password" });
+    return res.status(400).json({ message: "invalid username or password" });
   }
 
   const token = signToken(exist.id);
   res.setHeader("Authorization", `Bearer ${token}`);
 
-  return res.status(200).json({ message: "login!" });
+  return res.status(200).json({ message: "berhasil login!" });
 };
 
 const updateUsers = async (req, res, next) => {
@@ -226,7 +247,7 @@ const deleteUsers = async (req, res, next) => {
   await data.destroy();
   return res.status(200).json({
     message: "berhasil delete user!",
-    data
+    data,
   });
 };
 
