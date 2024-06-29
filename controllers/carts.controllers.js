@@ -129,6 +129,15 @@ const deleteCartbyId = async (req, res) => {
 const deleteAllCarts = async (req, res) => {
   try {
     const userId = req.currentUser.id;
+
+    const cartCount = await Carts.count({ where: { userId } });
+    if (cartCount === 0) {
+      return res.status(400).json({
+        code: 400,
+        message: "No carts found for deletion",
+      });
+    }
+
     await Carts.destroy({ where: { userId } });
 
     return res.status(200).json({
