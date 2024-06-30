@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     productId: {
       allowNull: false,
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
     },
     recommended: {
       allowNull: false,
@@ -26,11 +26,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     osId: {
       allowNull: false,
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       references: {
         model: "CategorySysReq",
         key: "id",
-      }, 
+      },
     },
     processor: {
       allowNull: false,
@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.STRING
     },
-    directW: {
+    directX: {
       allowNull: true,
       type: DataTypes.STRING
     },

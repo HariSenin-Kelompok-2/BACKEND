@@ -16,11 +16,9 @@ module.exports = {
       "CategorySysReqs",
       [
         {
-          id: "3c437996-a1eb-43c3-8872-6c0007379f1b",
           osName: "Windows",
         },
         {
-          id: "127fa328-c7b4-495d-949a-fddf7c38ae51",
           osName: "MacOS",
         },
       ],
