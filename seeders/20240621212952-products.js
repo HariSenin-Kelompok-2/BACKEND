@@ -18,7 +18,7 @@ module.exports = {
         {
           name: "Apex Legends",
           short_description: "waw",
-          release_date:"kapan-kapan",
+          // release_date:"kapan-kapan",
           description: "waw keren",
           developer: "dev1",
           publisher: "publisher1",
@@ -28,7 +28,7 @@ module.exports = {
         {
           name: "Elden Ring",
           short_description: "waw2",
-          release_date:"kapan-kapan2",
+          // release_date:"kapan-kapan2",
           description: "waw keren2",
           developer: "dev2",
           publisher: "publisher2",

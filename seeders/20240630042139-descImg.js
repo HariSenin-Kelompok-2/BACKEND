@@ -16,14 +16,12 @@ module.exports = {
       "descImgs",
         [
           {
-            id: crypto.randomUUID(),
             img: "21e1q23c9ur9c824035u903c4.png",
-            productId: "8459da6e-89a1-4931-a05a-2303ad43c532",
+            productId: 1,
           },
           {
-            id: crypto.randomUUID(),
             img: "wadawdqwedr123r23fasefwef3r9.png",
-            productId: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
+            productId: 1,
           },
         ],
         {}

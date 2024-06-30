@@ -23,7 +23,8 @@ module.exports = {
       },
       release_date: {
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       developer: {
         type: Sequelize.STRING,
