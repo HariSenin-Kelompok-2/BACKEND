@@ -1,4 +1,4 @@
-const {products, Category, PriceList, Feature, SysReqs, CategorySysReq, Review, ScrollThumbnail} = require("../models");
+const {products, Category, PriceList, Feature, SysReqs, CategorySysReq, Review, ScrollThumbnail, descImg} = require("../models");
 
 const getProductDetail = async (req, res, next) => {
   try{
@@ -72,6 +72,9 @@ const getProductDetail = async (req, res, next) => {
             "img"
           ]
         },
+        {
+          model: descImg,
+        }
     ]
   });
   if (!data){
