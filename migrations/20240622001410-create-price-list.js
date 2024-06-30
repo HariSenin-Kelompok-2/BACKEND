@@ -6,8 +6,8 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        autoIncrement: true,
+        type: Sequelize.INTEGER,
       },
       price: {
         allowNull: false,
@@ -19,7 +19,7 @@ module.exports = {
       },
       productId: {
         allowNull: false,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         references: {
           model: "Products",
           key: "id",

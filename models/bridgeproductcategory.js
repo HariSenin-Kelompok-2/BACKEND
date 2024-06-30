@@ -16,11 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   BridgeProductCategory.init({
     categoryId: {
       allowNull: false,
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
     },
     productId: {
       allowNull: false,
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
     },
     createdAt: {
       allowNull: false,

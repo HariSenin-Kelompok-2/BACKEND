@@ -16,14 +16,13 @@ module.exports = {
       "SysReqs",
       [
         {
-          id: crypto.randomUUID(),
-          productId: "8459da6e-89a1-4931-a05a-2303ad43c532",
+          productId: 1,
           recommended: true,
-          osId: "3c437996-a1eb-43c3-8872-6c0007379f1b",
+          osId: 1,
           processor: "I5-10400F",
           memory: "8GB",
           graphics: "RTX 3090",
-          directW: "16GB",
+          directX: "16GB",
           storage: "512GB",
         },
       ],

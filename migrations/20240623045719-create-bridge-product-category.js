@@ -6,7 +6,7 @@ module.exports = {
       categoryId: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         references: {
           model: 'Categories',
           key: 'id'
@@ -17,7 +17,7 @@ module.exports = {
       productId: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         references: {
           model: "Products",
           key: "id"

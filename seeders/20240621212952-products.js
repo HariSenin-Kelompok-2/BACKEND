@@ -16,7 +16,6 @@ module.exports = {
       "products",
       [
         {
-          id: "8459da6e-89a1-4931-a05a-2303ad43c532",
           name: "Apex Legends",
           short_description: "waw",
           release_date:"kapan-kapan",
@@ -25,10 +24,8 @@ module.exports = {
           publisher: "publisher1",
           product_thumbnail: "gambar keren",
           video: "dangdutan"
-
         },
         {
-          id: "fa02177d-bd6a-4de5-a2ac-08a50942d805",
           name: "Elden Ring",
           short_description: "waw2",
           release_date:"kapan-kapan2",

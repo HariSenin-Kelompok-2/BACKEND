@@ -16,11 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   BridgeProductFeatures.init({
     productId: {
       allowNull: false,
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
     },
     featureId: {
       allowNull: false,
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
     },
     createdAt: {
       allowNull: false,
