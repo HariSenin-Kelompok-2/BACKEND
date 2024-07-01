@@ -1,12 +1,11 @@
-const { Users  } = require("../models");
+const { Users } = require("../models");
 const { AuthServices, UserQuery, RegionQuery } = require("../services");
 
 const getUserDetail = async (req, res, next) => {
   try {
-    const data = await UserQuery.getUserWhere({ id: req.currentUser.id });
-    console.log(req.currentUser);
-    
-    return res.status(200).json(data);
+    const data = await UserQuery.getUserDetailWhere({ id: req.currentUser.id });
+
+    return res.status(200).json({ data });
   } catch (error) {
     return res.status(500).json({
       code: 500,
@@ -159,7 +158,9 @@ const updateUsers = async (req, res, next) => {
     }
 
     await data.save();
-    return res.status(201).json({ status: "berhasil update user!", data });
+
+    const updatedData = await UserQuery.getUserDetailWhere({ id: data.id });
+    return res.status(201).json({ status: "berhasil update user!", data: updatedData });
   } catch (error) {
     return res.status(500).json({
       code: 500,
@@ -182,7 +183,6 @@ const deleteUser = async (req, res, next) => {
     await data.destroy();
     return res.status(200).json({
       message: "berhasil delete user!",
-      data,
     });
   } catch (error) {
     return res.status(500).json({

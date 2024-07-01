@@ -1,6 +1,6 @@
 const { Users, Region, products, Carts, PriceList, Review } = require("../models");
 
-const getUserWhere = async (columnObject) => {
+const getUserDetailWhere = async (columnObject) => {
   return await Users.findOne({
     where: {
       ...columnObject,
@@ -44,4 +44,12 @@ const getUserWhere = async (columnObject) => {
   });
 };
 
-module.exports = { getUserWhere };
+const getUserWhere = async (columnObject) => {
+  return await Users.findOne({
+    where: {
+      ...columnObject
+    }
+  })
+}
+
+module.exports = { getUserWhere, getUserDetailWhere };

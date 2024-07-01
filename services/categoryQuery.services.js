@@ -1,6 +1,6 @@
 const { Category, products, PriceList, Feature } = require("../models");
 
-const getCategoryWhere = async (columnObject) => {
+const getCategoryDetailWhere = async (columnObject) => {
   const category = await Category.findOne({
     attributes: ["id", "name"],
     where: {
@@ -33,4 +33,4 @@ const getAllCategories = async () => {
   });
 };
 
-module.exports = { getCategoryWhere, getAllCategories };
+module.exports = { getCategoryDetailWhere, getAllCategories };
