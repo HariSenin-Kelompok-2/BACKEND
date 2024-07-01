@@ -1,50 +1,11 @@
-const { Users, Region, products, Carts, PriceList, Review } = require("../models");
-const { signToken, hashPassword, checkUsername } = require("../services");
+const { Users  } = require("../models");
+const { AuthServices, UserQuery, RegionQuery } = require("../services");
 
 const getUserDetail = async (req, res, next) => {
   try {
-    const data = await Users.findOne({
-      where: {
-        id: req.currentUser.id,
-      },
-      attributes: ["username", "email"],
-      include: [
-        {
-          model: Region,
-          attributes: ["name"],
-        },
-        {
-          model: products,
-          as: "productOwned",
-          attributes: ["name"],
-        },
-        {
-          model: Carts,
-          attributes: ["id"],
-          include: [
-            {
-              model: PriceList,
-              attributes: ["price", "discount"],
-              include: [
-                {
-                  model: products,
-                  attributes: ["name"],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          model: Review,
-          attributes: ["id", "content", "isRecommend"],
-          include: {
-            model: products,
-            attributes: ["name"],
-          },
-        },
-      ],
-    });
-
+    const data = await UserQuery.getUserWhere({ id: req.currentUser.id });
+    console.log(req.currentUser);
+    
     return res.status(200).json(data);
   } catch (error) {
     return res.status(500).json({
@@ -65,26 +26,16 @@ const registerUser = async (req, res, next) => {
       });
     }
 
-    if (!checkUsername(username)) {
+    if (!AuthServices.checkUsername(username)) {
       return res.status(400).json({ message: "username hanya boleh terdiri dari huruf dan angka" });
     }
 
-    const existUsername = await Users.findOne({
-      where: {
-        username,
-      },
-    });
-
+    const existUsername = await UserQuery.getUserWhere({ username });
     if (existUsername) {
       return res.status(400).json({ message: "username sudah digunakan" });
     }
 
-    const existEmail = await Users.findOne({
-      where: {
-        email,
-      },
-    });
-
+    const existEmail = await UserQuery.getUserWhere({ email });
     if (existEmail) {
       return res.status(400).json({
         message: "email sudah digunakan",
@@ -99,12 +50,7 @@ const registerUser = async (req, res, next) => {
       return res.status(400).json({ message: "password harus lebih dari 6 karakter" });
     }
 
-    const existRegion = await Region.findOne({
-      where: {
-        name: region,
-      },
-    });
-
+    const existRegion = await RegionQuery.getRegionWhere({ name: region });
     if (!existRegion) {
       res.status(404).json({ message: "region tidak ditemukan" });
     }
@@ -113,21 +59,13 @@ const registerUser = async (req, res, next) => {
       id: crypto.randomUUID(),
       username,
       email,
-      password: await hashPassword(password),
+      password: await AuthServices.hashPassword(password),
       regionId: existRegion.id,
     });
 
-    const data = await Users.findByPk(newUser.id, {
-      attributes: ["id", "username", "email", "password"],
-      include: [
-        {
-          model: Region,
-          attributes: ["name"],
-        },
-      ],
-    });
+    const data = await UserQuery.getUserWhere({ id: newUser.id });
 
-    const token = signToken(data.id);
+    const token = AuthServices.signToken(data.id);
     res.setHeader("Authorization", `Bearer ${token}`);
 
     return res.status(201).json({ status: 201, message: "berhasil register!", data });
@@ -148,17 +86,12 @@ const loginUser = async (req, res, next) => {
       return res.status(400).json({ message: "username dan password harus diisi!" });
     }
 
-    const exist = await Users.findOne({
-      where: {
-        username,
-      },
-    });
-
+    const exist = await UserQuery.getUserWhere({ username });
     if (!exist || !(await exist.isCorrectPassword(password, exist.password))) {
       return res.status(400).json({ message: "invalid username or password" });
     }
 
-    const token = signToken(exist.id);
+    const token = AuthServices.signToken(exist.id);
     res.setHeader("Authorization", `Bearer ${token}`);
 
     return res.status(200).json({ message: "berhasil login!" });
@@ -174,12 +107,8 @@ const loginUser = async (req, res, next) => {
 const updateUsers = async (req, res, next) => {
   try {
     const { username, email, password, passwordConfirm, region } = req.body;
-    const data = await Users.findOne({
-      where: {
-        id: req.currentUser.id,
-      },
-    });
 
+    const data = await UserQuery.getUserWhere({ id: req.currentUser.id });
     if (!data) {
       return res.status(200).json({
         messsage: "data tidak ada!",
@@ -187,12 +116,7 @@ const updateUsers = async (req, res, next) => {
     }
 
     if (region) {
-      const existRegion = await Region.findOne({
-        where: {
-          name: region,
-        },
-      });
-
+      const existRegion = await RegionQuery.getRegionWhere({ name: region });
       if (!existRegion) {
         return res.status(404).json({ message: "region tidak ditemukan" });
       }
@@ -201,12 +125,7 @@ const updateUsers = async (req, res, next) => {
     }
 
     if (email) {
-      const exists = await Users.findOne({
-        where: {
-          email,
-        },
-      });
-
+      const exists = await UserQuery.getUserWhere({ email });
       if (exists && exists.id !== data.id) {
         return res.status(400).json({
           message: "Email sudah digunakan",
@@ -217,12 +136,7 @@ const updateUsers = async (req, res, next) => {
     }
 
     if (username) {
-      const existUsername = await Users.findOne({
-        where: {
-          username,
-        },
-      });
-
+      const existUsername = await UserQuery.getUserWhere({ username });
       if (existUsername && existUsername.id !== data.id) {
         return res.status(400).json({
           message: "Username sudah digunakan",
@@ -241,7 +155,7 @@ const updateUsers = async (req, res, next) => {
         return res.status(400).json({ message: "password dan passwordConfirm tidak cocok" });
       }
 
-      data.password = await hashPassword(password);
+      data.password = await AuthServices.hashPassword(password);
     }
 
     await data.save();
@@ -255,13 +169,9 @@ const updateUsers = async (req, res, next) => {
   }
 };
 
-const deleteUsers = async (req, res, next) => {
+const deleteUser = async (req, res, next) => {
   try {
-    const data = await Users.findOne({
-      where: {
-        id: req.currentUser.id,
-      },
-    });
+    const data = await UserQuery.getUserWhere({ id: req.currentUser.id });
 
     if (!data) {
       return res.status(404).json({
@@ -286,7 +196,7 @@ const deleteUsers = async (req, res, next) => {
 module.exports = {
   getUserDetail,
   updateUsers,
-  deleteUsers,
+  deleteUser,
   registerUser,
   loginUser,
 };
