@@ -65,7 +65,10 @@ const registerUser = async (req, res, next) => {
     const data = await UserQuery.getUserWhere({ id: newUser.id });
 
     const token = AuthServices.signToken(data.id);
-    res.setHeader("Authorization", `Bearer ${token}`);
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
 
     return res.status(201).json({ status: 201, message: "berhasil register!", data });
   } catch (error) {
@@ -91,7 +94,10 @@ const loginUser = async (req, res, next) => {
     }
 
     const token = AuthServices.signToken(exist.id);
-    res.setHeader("Authorization", `Bearer ${token}`);
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
 
     return res.status(200).json({ message: "berhasil login!" });
   } catch (error) {
@@ -102,6 +108,16 @@ const loginUser = async (req, res, next) => {
     });
   }
 };
+
+const logoutUser = async (req, res, next) => {
+  res.clearCookie('jwt', {
+    httpOnly: true,
+  });
+
+  res.status(200).json({
+    message: "Logout berhasil"
+  })
+}
 
 const updateUsers = async (req, res, next) => {
   try {
@@ -199,4 +215,5 @@ module.exports = {
   deleteUser,
   registerUser,
   loginUser,
+  logoutUser
 };
