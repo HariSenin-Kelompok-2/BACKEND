@@ -16,12 +16,12 @@ module.exports = {
       "pricelists",
       [
         {
-          price: "549000",
-          discount: 10,
+          price: "599000",
+          discount: 0,
           productId: 2,
         },
         {
-          price: "0",
+          price: "729000",
           discount: 0,
           productId: 1,
         },

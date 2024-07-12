@@ -12,7 +12,7 @@ const getCarts = async (req, res) => {
           include: [
             {
               model: products,
-              attributes: ["id", "name"],
+              attributes: ["id", "name", "product_thumbnail"],
             },
           ],
         },
@@ -112,7 +112,7 @@ const deleteCartbyId = async (req, res) => {
     }
 
     await cart.destroy();
-    
+
     return res.status(200).json({
       code: 200,
       message: "Cart deleted successfully",
