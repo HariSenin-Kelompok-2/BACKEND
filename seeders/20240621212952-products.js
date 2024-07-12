@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -11,19 +11,19 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-    */
+     */
     await queryInterface.bulkInsert(
       "products",
       [
         {
-          name: "Apex Legends",
+          name: "God Of War",
           short_description: "waw",
           // release_date:"kapan-kapan",
           description: "waw keren",
           developer: "dev1",
           publisher: "publisher1",
-          product_thumbnail: "gambar keren",
-          video: "dangdutan"
+          product_thumbnail: "https://cdn.akamai.steamstatic.com/steam/apps/1593500/header.jpg?t=1720454875",
+          video: "dangdutan",
         },
         {
           name: "Elden Ring",
@@ -32,21 +32,22 @@ module.exports = {
           description: "waw keren2",
           developer: "dev2",
           publisher: "publisher2",
-          product_thumbnail: "gambar keren2",
-          video: "dangdutan2"
+          product_thumbnail:
+            "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header_alt_assets_2.jpg?t=1720627962",
+          video: "dangdutan2",
         },
       ],
       {}
     );
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('products', null, {});
-  }
+    await queryInterface.bulkDelete("products", null, {});
+  },
 };
