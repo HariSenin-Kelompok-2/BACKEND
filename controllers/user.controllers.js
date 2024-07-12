@@ -1,4 +1,5 @@
 const { Users, Region, products, Carts, PriceList, Review } = require("../models");
+const users = require("../models/users");
 const { signToken, hashPassword, checkUsername } = require("../services");
 
 const getUserDetail = async (req, res, next) => {
@@ -283,10 +284,25 @@ const deleteUsers = async (req, res, next) => {
   }
 };
 
+// const getAllUsers = async(res,req,next) => {
+//   try{
+//     const data = await Users.findAll({
+//     });
+    
+//   } catch (error) {
+//     return res.status(500).json({
+//       code: 500,
+//       message: "Internal Server Error",
+//       error: error.message,
+//     });
+//   }
+// };
+
 module.exports = {
   getUserDetail,
   updateUsers,
   deleteUsers,
   registerUser,
   loginUser,
+  // getAllUsers
 };

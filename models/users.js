@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Users.belongsTo(models.Region, { foreignKey: "regionId" });
+      Users.belongsTo(models.Role, { foreignKey: "roleId" });
       Users.hasMany(models.Carts, { foreignKey: "userId" });
       Users.belongsToMany(models.products, { through: "BridgeProductOwned", as: "productOwned" });
       Users.hasMany(models.Review)
@@ -43,6 +44,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       regionId: {
+        allowNull: false,
+        type: DataTypes.UUID,
+      },
+      roleId: {
         allowNull: false,
         type: DataTypes.UUID,
       },

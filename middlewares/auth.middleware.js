@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { Users } = require("../models");
+const { Users, Role } = require("../models");
 
 const checkToken = async (req, res, next) => {
   const { authorization } = req.headers;
@@ -12,7 +12,7 @@ const checkToken = async (req, res, next) => {
     return res.status(401).json({ message: "token tidak ditemukan" });
   }
 
-  let decode;
+  let decode; 
   try {
     decode = await jwt.verify(token, process.env.JWT_SECRET);
   } catch (error) {
@@ -30,6 +30,21 @@ const checkToken = async (req, res, next) => {
   next();
 };
 
+// const permissionUser = async (res,req,next) => {
+//   const rolesData = await Role.findByPk(req.currentUser.Id)
+
+//   const roleName = rolesData.name 
+
+//   if (!Role.Include(roleName)) {
+//     return next(res.status(403).json({
+//       status:403,
+//       error:"Anda tidak dapat mengakses halaman ini"
+//     }))
+//   }
+
+//   next();
+// }
 module.exports = {
   checkToken,
+  // permissionUser,
 };

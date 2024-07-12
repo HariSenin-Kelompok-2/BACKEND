@@ -22,6 +22,7 @@ module.exports = {
           username: "JohnDoe",
           email: "johndoe@example.com",
           regionId: "b6f70246-6ac3-46f9-969c-be101be68a56",
+          roleId: "b6f70246-6ac3-46f9-969c-be101be68a57",
           password: await hashPassword("password"),
         },
         {
@@ -29,6 +30,7 @@ module.exports = {
           username: "JohnCena",
           email: "johncena@example.com",
           regionId: "b6f70246-6ac3-46f9-969c-be101be68a56",
+          roleId: "b6f70246-6ac3-46f9-969c-be101be68a57",
           password: await hashPassword("password"),
         },
         {
@@ -36,6 +38,7 @@ module.exports = {
           username: "JamesBond",
           email: "jamesbond@example.com",
           regionId: "55e8eb78-d6e4-4e1c-94cc-0f6fc898664a",
+          roleId: "b6f70246-6ac3-46f9-969c-be101be68a57",
           password: await hashPassword("password"),
         },
       ],

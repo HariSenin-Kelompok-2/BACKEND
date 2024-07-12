@@ -33,6 +33,16 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
+      roleId: {
+        allowNull: false,
+        type: Sequelize.UUID,
+        references: {
+          model: "Roles",
+          key: 'id'
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
