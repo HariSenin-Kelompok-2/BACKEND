@@ -9,6 +9,9 @@ const getCategoryDetailWhere = async (columnObject) => {
     include: [
       {
         model: products,
+        through: {
+          attributes: [],
+        },
         attributes: ["id", "name", "short_description", "product_thumbnail"],
         include: [
           {

@@ -13,6 +13,9 @@ const getUserDetailWhere = async (columnObject) => {
       },
       {
         model: products,
+        through: {
+          attributes: []
+        },
         as: "productOwned",
         attributes: ["name"],
       },
