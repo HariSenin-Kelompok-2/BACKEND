@@ -1,14 +1,23 @@
 const express = require("express");
 const morgan = require("morgan");
+const cookieParser = require("cookie-parser")
+const cors = require("cors");
 const app = express();
 
 const PORT = process.env.SERVER_PORT || 3001;
 const routes = require("./routes");
 
 app.use(express.json());
+app.use(cookieParser())
 app.use(
   express.urlencoded({
     extended: false,
+  })
+);
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true
   })
 );
 

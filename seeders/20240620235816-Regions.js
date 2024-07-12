@@ -17,12 +17,15 @@ module.exports = {
       [
         {
           name: "Indonesia",
+          icon: "https://community.akamai.steamstatic.com/public/images/countryflags/id.gif"
         },
         {
           name: "Vietnam",
+          icon: "https://community.akamai.steamstatic.com/public/images/countryflags/vn.gif",
         },
         {
           name: "China",
+          icon: "https://community.akamai.steamstatic.com/public/images/countryflags/cn.gif"
         },
       ],
       {}
