@@ -85,12 +85,12 @@ const loginUser = async (req, res, next) => {
     const { username, password } = req.body;
 
     if (!username || !password) {
-      return res.status(400).json({ message: "username dan password harus diisi!" });
+      return res.status(400).json({ message: "must include username and password!" });
     }
 
     const exist = await UserQuery.getUserWhere({ username });
     if (!exist || !(await exist.isCorrectPassword(password, exist.password))) {
-      return res.status(400).json({ message: "invalid username or password" });
+      return res.status(400).json({ message: "Please check your password and account name and try again." });
     }
 
     const token = AuthServices.signToken(exist.id);
@@ -121,7 +121,7 @@ const logoutUser = async (req, res, next) => {
 
 const updateUsers = async (req, res, next) => {
   try {
-    const { username, email, password, passwordConfirm, region } = req.body;
+    const { username, email, password, passwordConfirm, region, bio } = req.body;
 
     const data = await UserQuery.getUserWhere({ id: req.currentUser.id });
     if (!data) {
@@ -143,7 +143,7 @@ const updateUsers = async (req, res, next) => {
       const exists = await UserQuery.getUserWhere({ email });
       if (exists && exists.id !== data.id) {
         return res.status(400).json({
-          message: "Email sudah digunakan",
+          message: "email already used",
         });
       }
 
@@ -154,7 +154,7 @@ const updateUsers = async (req, res, next) => {
       const existUsername = await UserQuery.getUserWhere({ username });
       if (existUsername && existUsername.id !== data.id) {
         return res.status(400).json({
-          message: "Username sudah digunakan",
+          message: "username or account name already used",
         });
       }
 
@@ -171,6 +171,12 @@ const updateUsers = async (req, res, next) => {
       }
 
       data.password = await AuthServices.hashPassword(password);
+    }
+
+    if (bio) {
+      data.bio = bio
+    } else if (bio === "") {
+      data.bio = null
     }
 
     await data.save();

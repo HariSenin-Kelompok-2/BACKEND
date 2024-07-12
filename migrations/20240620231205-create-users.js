@@ -23,6 +23,9 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: false,
       },
+      bio: {
+        type: Sequelize.TEXT,
+      },
       regionId: {
         allowNull: false,
         type: Sequelize.INTEGER,

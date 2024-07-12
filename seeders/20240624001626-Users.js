@@ -19,21 +19,22 @@ module.exports = {
       [
         {
           id: "5194f115-92c4-405c-905e-a37aaee94ad4",
-          username: "JohnDoe",
+          username: "johndoe",
           email: "johndoe@example.com",
+          bio: "Hi! Im John Doe",
           regionId: 1,
           password: await AuthServices.hashPassword("password"),
         },
         {
           id: "cc75df37-ce40-4395-ae31-0a7e982cf68e",
-          username: "JohnCena",
+          username: "johncena",
           email: "johncena@example.com",
           regionId: 1,
           password: await AuthServices.hashPassword("password"),
         },
         {
           id: "b2c8d9b5-64a1-4688-a4f6-fd2eadb0c52e",
-          username: "JamesBond",
+          username: "jamesbond",
           email: "jamesbond@example.com",
           regionId: 2,
           password: await AuthServices.hashPassword("password"),

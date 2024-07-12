@@ -41,6 +41,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(100),
         allowNull: false,
       },
+      bio: {
+        type: DataTypes.TEXT,
+      },
       regionId: {
         allowNull: false,
         type: DataTypes.INTEGER,

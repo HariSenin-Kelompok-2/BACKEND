@@ -5,11 +5,11 @@ const getUserDetailWhere = async (columnObject) => {
     where: {
       ...columnObject,
     },
-    attributes: ["username", "email"],
+    attributes: ["username", "email", "bio"],
     include: [
       {
         model: Region,
-        attributes: ["name"],
+        attributes: ["name", "icon"],
       },
       {
         model: products,
