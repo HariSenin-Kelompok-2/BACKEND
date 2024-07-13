@@ -20,6 +20,9 @@ const getCategoryDetailWhere = async (columnObject) => {
           },
           {
             model: Feature,
+            through: {
+              attributes: [],
+            },
             as: "productFeatures",
             attributes: ["name", "icon"],
           },
