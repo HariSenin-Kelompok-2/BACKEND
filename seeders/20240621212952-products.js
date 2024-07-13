@@ -147,6 +147,61 @@ module.exports = {
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2139460/header.jpg?t=1720769375",
           video: "dangdutan2",
         },
+        {
+          name: "Destiny 2",
+          short_description: "Destiny 2 is an action MMO with a single evolving world that you and your friends can join anytime, anywhere, absolutely free.",
+          // release_date:"kapan-kapan2",
+          description: "waw keren2",
+          developer: "Bungie",
+          publisher: "Bungie",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/header.jpg?t=1720218333",
+          video: "dangdutan2",
+        },
+        {
+          name: "Hunt: Showdown",
+          short_description: "Hunt: Showdown is a high-stakes, tactical PvPvE first-person shooter. Hunt for bounties in the infested Bayou, kill nightmarish monsters and outwit competing hunters - alone or in a group - with your glory, gear, and gold on the line.",
+          // release_date:"kapan-kapan2",
+          description: "waw keren2",
+          developer: "Crytek",
+          publisher: "Crytek",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/header.jpg?t=1719844589",
+          video: "dangdutan2",
+        },
+        {
+          name: "Ghost of Tsushima DIRECTOR'S CUT",
+          short_description: "A storm is coming. Venture into the complete Ghost of Tsushima DIRECTORS CUT on PC; forge your own path through this open-world action adventure and uncover its hidden wonders. Brought to you by Sucker Punch Productions, Nixxes Software and PlayStation Studios.",
+          // release_date:"kapan-kapan2",
+          description: "waw keren2",
+          developer: "Sucker Punch Productions, Nixxes Software",
+          publisher: "PlayStation Publishing LLC",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/header.jpg?t=1717622497",
+          video: "dangdutan2",
+        },
+        {
+          name: "Euro Truck Simulator 2",
+          short_description: "Travel across Europe as king of the road, a trucker who delivers important cargo across impressive distances! With dozens of cities to explore, your endurance, skill and speed will all be pushed to their limits.",
+          // release_date:"kapan-kapan2",
+          description: "waw keren2",
+          developer: "SCS Software",
+          publisher: "SCS Software",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/227300/header.jpg?t=1718786615",
+          video: "dangdutan2",
+        },
+        {
+          name: "Gray Zone Warfare",
+          short_description: "Gray Zone Warfare is an intense tactical FPS emphasizing realism. Join a Private Military Company to explore a vast MMO open world featuring a PvEvP and PvE mode. Strategize and survive against human operators and AI enemies while uncovering the mystery of Lamang Island.",
+          // release_date:"kapan-kapan2",
+          description: "waw keren2",
+          developer: "MADFINGER Games, a.s.",
+          publisher: "MADFINGER Games, a.s.",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2479810/header.jpg?t=1719853075",
+          video: "dangdutan2",
+        },
       ],
       {}
     );
