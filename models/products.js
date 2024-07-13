@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
       products.belongsToMany(models.Feature, { through: "BridgeProductFeatures", as: "productFeatures" });
       products.hasOne(models.SysReqs);
       products.hasMany(models.PriceList);
-      products.hasMany(models.Review)
+      products.hasMany(models.Review);
+      products.hasMany(models.descImg)
     }
   }
   products.init(
@@ -24,8 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER,
       },
       name: {
         type: DataTypes.STRING,
@@ -42,6 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       release_date: {
         type: DataTypes.DATE,
         allowNull: false,
+        defaultValue: DataTypes.DATE
       },
       developer: {
         type: DataTypes.STRING,

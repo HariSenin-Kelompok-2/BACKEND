@@ -1,51 +1,11 @@
-const { Users, Region, products, Carts, PriceList, Review } = require("../models");
-const { signToken, hashPassword, checkUsername } = require("../services");
+const { Users } = require("../models");
+const { AuthServices, UserQuery, RegionQuery } = require("../services");
 
 const getUserDetail = async (req, res, next) => {
   try {
-    const data = await Users.findOne({
-      where: {
-        id: req.currentUser.id,
-      },
-      attributes: ["username", "email"],
-      include: [
-        {
-          model: Region,
-          attributes: ["name"],
-        },
-        {
-          model: products,
-          as: "productOwned",
-          attributes: ["name"],
-        },
-        {
-          model: Carts,
-          attributes: ["id"],
-          include: [
-            {
-              model: PriceList,
-              attributes: ["price", "discount"],
-              include: [
-                {
-                  model: products,
-                  attributes: ["name"],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          model: Review,
-          attributes: ["id", "content", "isRecommend"],
-          include: {
-            model: products,
-            attributes: ["name"],
-          },
-        },
-      ],
-    });
+    const data = await UserQuery.getUserDetailWhere({ id: req.currentUser.id });
 
-    return res.status(200).json(data);
+    return res.status(200).json({ data });
   } catch (error) {
     return res.status(500).json({
       code: 500,
@@ -65,26 +25,16 @@ const registerUser = async (req, res, next) => {
       });
     }
 
-    if (!checkUsername(username)) {
+    if (!AuthServices.checkUsername(username)) {
       return res.status(400).json({ message: "username hanya boleh terdiri dari huruf dan angka" });
     }
 
-    const existUsername = await Users.findOne({
-      where: {
-        username,
-      },
-    });
-
+    const existUsername = await UserQuery.getUserWhere({ username });
     if (existUsername) {
       return res.status(400).json({ message: "username sudah digunakan" });
     }
 
-    const existEmail = await Users.findOne({
-      where: {
-        email,
-      },
-    });
-
+    const existEmail = await UserQuery.getUserWhere({ email });
     if (existEmail) {
       return res.status(400).json({
         message: "email sudah digunakan",
@@ -99,12 +49,7 @@ const registerUser = async (req, res, next) => {
       return res.status(400).json({ message: "password harus lebih dari 6 karakter" });
     }
 
-    const existRegion = await Region.findOne({
-      where: {
-        name: region,
-      },
-    });
-
+    const existRegion = await RegionQuery.getRegionWhere({ name: region });
     if (!existRegion) {
       res.status(404).json({ message: "region tidak ditemukan" });
     }
@@ -113,22 +58,17 @@ const registerUser = async (req, res, next) => {
       id: crypto.randomUUID(),
       username,
       email,
-      password: await hashPassword(password),
+      password: await AuthServices.hashPassword(password),
       regionId: existRegion.id,
     });
 
-    const data = await Users.findByPk(newUser.id, {
-      attributes: ["id", "username", "email", "password"],
-      include: [
-        {
-          model: Region,
-          attributes: ["name"],
-        },
-      ],
-    });
+    const data = await UserQuery.getUserWhere({ id: newUser.id });
 
-    const token = signToken(data.id);
-    res.setHeader("Authorization", `Bearer ${token}`);
+    const token = AuthServices.signToken(data.id);
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
 
     return res.status(201).json({ status: 201, message: "berhasil register!", data });
   } catch (error) {
@@ -145,21 +85,19 @@ const loginUser = async (req, res, next) => {
     const { username, password } = req.body;
 
     if (!username || !password) {
-      return res.status(400).json({ message: "username dan password harus diisi!" });
+      return res.status(400).json({ message: "must include username and password!" });
     }
 
-    const exist = await Users.findOne({
-      where: {
-        username,
-      },
-    });
-
+    const exist = await UserQuery.getUserWhere({ username });
     if (!exist || !(await exist.isCorrectPassword(password, exist.password))) {
-      return res.status(400).json({ message: "invalid username or password" });
+      return res.status(400).json({ message: "Please check your password and account name and try again." });
     }
 
-    const token = signToken(exist.id);
-    res.setHeader("Authorization", `Bearer ${token}`);
+    const token = AuthServices.signToken(exist.id);
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
 
     return res.status(200).json({ message: "berhasil login!" });
   } catch (error) {
@@ -171,15 +109,21 @@ const loginUser = async (req, res, next) => {
   }
 };
 
+const logoutUser = async (req, res, next) => {
+  res.clearCookie('jwt', {
+    httpOnly: true,
+  });
+
+  res.status(200).json({
+    message: "Logout berhasil"
+  })
+}
+
 const updateUsers = async (req, res, next) => {
   try {
-    const { username, email, password, passwordConfirm, region } = req.body;
-    const data = await Users.findOne({
-      where: {
-        id: req.currentUser.id,
-      },
-    });
+    const { username, email, password, passwordConfirm, region, bio } = req.body;
 
+    const data = await UserQuery.getUserWhere({ id: req.currentUser.id });
     if (!data) {
       return res.status(200).json({
         messsage: "data tidak ada!",
@@ -187,12 +131,7 @@ const updateUsers = async (req, res, next) => {
     }
 
     if (region) {
-      const existRegion = await Region.findOne({
-        where: {
-          name: region,
-        },
-      });
-
+      const existRegion = await RegionQuery.getRegionWhere({ name: region });
       if (!existRegion) {
         return res.status(404).json({ message: "region tidak ditemukan" });
       }
@@ -201,15 +140,10 @@ const updateUsers = async (req, res, next) => {
     }
 
     if (email) {
-      const exists = await Users.findOne({
-        where: {
-          email,
-        },
-      });
-
+      const exists = await UserQuery.getUserWhere({ email });
       if (exists && exists.id !== data.id) {
         return res.status(400).json({
-          message: "Email sudah digunakan",
+          message: "email already used",
         });
       }
 
@@ -217,15 +151,10 @@ const updateUsers = async (req, res, next) => {
     }
 
     if (username) {
-      const existUsername = await Users.findOne({
-        where: {
-          username,
-        },
-      });
-
+      const existUsername = await UserQuery.getUserWhere({ username });
       if (existUsername && existUsername.id !== data.id) {
         return res.status(400).json({
-          message: "Username sudah digunakan",
+          message: "username or account name already used",
         });
       }
 
@@ -241,11 +170,19 @@ const updateUsers = async (req, res, next) => {
         return res.status(400).json({ message: "password dan passwordConfirm tidak cocok" });
       }
 
-      data.password = await hashPassword(password);
+      data.password = await AuthServices.hashPassword(password);
+    }
+
+    if (bio) {
+      data.bio = bio
+    } else if (bio === "") {
+      data.bio = null
     }
 
     await data.save();
-    return res.status(201).json({ status: "berhasil update user!", data });
+
+    const updatedData = await UserQuery.getUserDetailWhere({ id: data.id });
+    return res.status(201).json({ status: "berhasil update user!", data: updatedData });
   } catch (error) {
     return res.status(500).json({
       code: 500,
@@ -255,13 +192,9 @@ const updateUsers = async (req, res, next) => {
   }
 };
 
-const deleteUsers = async (req, res, next) => {
+const deleteUser = async (req, res, next) => {
   try {
-    const data = await Users.findOne({
-      where: {
-        id: req.currentUser.id,
-      },
-    });
+    const data = await UserQuery.getUserWhere({ id: req.currentUser.id });
 
     if (!data) {
       return res.status(404).json({
@@ -272,7 +205,6 @@ const deleteUsers = async (req, res, next) => {
     await data.destroy();
     return res.status(200).json({
       message: "berhasil delete user!",
-      data,
     });
   } catch (error) {
     return res.status(500).json({
@@ -286,7 +218,8 @@ const deleteUsers = async (req, res, next) => {
 module.exports = {
   getUserDetail,
   updateUsers,
-  deleteUsers,
+  deleteUser,
   registerUser,
   loginUser,
+  logoutUser
 };

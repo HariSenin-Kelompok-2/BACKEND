@@ -16,12 +16,10 @@ module.exports = {
       "Features",
       [
         {
-          id: "7c82a0d4-9662-4bfc-acce-54d5d2b19b30",
           name: "Single Player",
           icon: "singleplayer.png",
         },
         {
-          id: "bfb471e5-acf6-4f19-80dd-9037dff57aaf",
           name: "Multi Player",
           icon: "multiplayer.png",
         },

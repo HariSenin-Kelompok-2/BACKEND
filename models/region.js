@@ -17,12 +17,16 @@ module.exports = (sequelize, DataTypes) => {
       id: {
         allowNull: false,
         primaryKey: true,
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        autoIncrement: true,
+        type: DataTypes.INTEGER,
       },
       name: {
         allowNull: false,
         type: DataTypes.STRING(20),
+      },
+      icon: {
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
       createdAt: {
         allowNull: false,

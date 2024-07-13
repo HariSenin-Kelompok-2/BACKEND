@@ -2,26 +2,25 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('ScrollThumbnails', {
+    await queryInterface.createTable('descImgs', {
       id: {
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
         type: Sequelize.INTEGER,
       },
+      img: {
+        type: Sequelize.TEXT
+      },
       productId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: 'Products',
+          model: 'products',
           key: 'id'
         },
-        onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
-      },
-      img: {
-        allowNull: false,
-        type: Sequelize.TEXT
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
@@ -36,6 +35,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('ScrollThumbnails');
+    await queryInterface.dropTable('descImgs');
   }
 };

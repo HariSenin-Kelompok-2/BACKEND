@@ -2,12 +2,7 @@ const jwt = require("jsonwebtoken");
 const { Users } = require("../models");
 
 const checkToken = async (req, res, next) => {
-  const { authorization } = req.headers;
-  let token;
-  if (authorization && authorization.startsWith("Bearer")) {
-    token = authorization.split(" ")[1];
-  }
-
+  const token = req.cookies.jwt
   if (!token) {
     return res.status(401).json({ message: "token tidak ditemukan" });
   }
@@ -20,11 +15,9 @@ const checkToken = async (req, res, next) => {
   }
 
   const currentUser = await Users.findByPk(decode.id) 
-
   if (!currentUser) {
     return res.status(401).json({status: 401, message: "token sudah kadaluarsa"});
   }
-
   req.currentUser = currentUser; 
 
   next();

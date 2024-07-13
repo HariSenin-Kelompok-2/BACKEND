@@ -1,9 +1,8 @@
-const { Region, Users } = require("../models");
+const { RegionQuery } = require("../services");
 
 const getRegions = async (req, res) => {
-  const regions = await Region.findAll({
-    attributes: ["name"],
-  });
+  const regions = await RegionQuery.getAllRegions();
+
   return res.status(200).json({ code: 200, data: regions });
 };
 

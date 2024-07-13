@@ -6,12 +6,12 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        autoIncrement: true,
+        type: Sequelize.INTEGER,
       },
       productId: {
         allowNull: false,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         references: {
           model: 'products',
           key: 'id'
@@ -25,7 +25,7 @@ module.exports = {
       },
       osId: {
         allowNull: false,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
         references: {
           model: 'CategorySysReqs',
           key: 'id'
@@ -45,7 +45,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      directW: {
+      directX: {
         allowNull: true,
         type: Sequelize.STRING
       },

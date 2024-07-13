@@ -12,16 +12,20 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert("BridgeProductFeatures", [
-      {
-        featureId: 1,
-        productId: 1,
-      },
-      {
-        featureId: 2,
-        productId: 1,
-      },
-    ], {});
+    Example: await queryInterface.bulkInsert(
+      "descImgs",
+        [
+          {
+            img: "21e1q23c9ur9c824035u903c4.png",
+            productId: 1,
+          },
+          {
+            img: "wadawdqwedr123r23fasefwef3r9.png",
+            productId: 1,
+          },
+        ],
+        {}
+      );
   },
 
   async down (queryInterface, Sequelize) {
@@ -31,6 +35,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('BridgeProductFeatures', null, {});
-  }
+    await queryInterface.bulkDelete('ScrollThumbnails', null, {});
+  },
 };

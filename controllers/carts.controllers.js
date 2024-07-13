@@ -12,7 +12,7 @@ const getCarts = async (req, res) => {
           include: [
             {
               model: products,
-              attributes: ["id", "name"],
+              attributes: ["id", "name", "product_thumbnail"],
             },
           ],
         },
@@ -61,7 +61,6 @@ const addCart = async (req, res) => {
     }
 
     const cart = await Carts.create({
-      id: crypto.randomUUID(),
       priceListId,
       userId,
     });
@@ -112,7 +111,7 @@ const deleteCartbyId = async (req, res) => {
     }
 
     await cart.destroy();
-    
+
     return res.status(200).json({
       code: 200,
       message: "Cart deleted successfully",
@@ -145,4 +144,9 @@ const deleteAllCarts = async (req, res) => {
   }
 };
 
-module.exports = { getCarts, addCart, deleteCartbyId, deleteAllCarts };
+module.exports = {
+  getCarts,
+  addCart,
+  deleteCartbyId,
+  deleteAllCarts,
+};

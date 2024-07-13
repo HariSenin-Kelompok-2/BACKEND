@@ -1,7 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
 const bcrypt = require("bcrypt");
-const hashPassword = require("../services/hashPassword");
 
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
@@ -42,9 +41,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(100),
         allowNull: false,
       },
+      bio: {
+        type: DataTypes.TEXT,
+      },
       regionId: {
         allowNull: false,
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
       },
       createdAt: {
         allowNull: false,

@@ -16,16 +16,16 @@ module.exports = {
       "Regions",
       [
         {
-          id: "b6f70246-6ac3-46f9-969c-be101be68a56",
           name: "Indonesia",
+          icon: "https://community.akamai.steamstatic.com/public/images/countryflags/id.gif"
         },
         {
-          id: "55e8eb78-d6e4-4e1c-94cc-0f6fc898664a",
           name: "Vietnam",
+          icon: "https://community.akamai.steamstatic.com/public/images/countryflags/vn.gif",
         },
         {
-          id: "78cb05f7-1045-4fab-b936-f8c7f0e74c9f",
           name: "China",
+          icon: "https://community.akamai.steamstatic.com/public/images/countryflags/cn.gif"
         },
       ],
       {}

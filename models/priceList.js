@@ -18,7 +18,12 @@ module.exports = (sequelize, DataTypes) => {
       id: {
         allowNull: false,
         primaryKey: true,
-        type: DataTypes.UUID,
+        autoIncrement: true,
+        type: DataTypes.INTEGER,
+      },
+      offerName: {
+        allowNull: false,
+        type: DataTypes.STRING(50),
       },
       price: {
         allowNull: false,
@@ -30,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       productId: {
         allowNull: false,
-        type: DataTypes.STRING(20),
+        type: DataTypes.INTEGER,
       },
       createdAt: {
         allowNull: false,
