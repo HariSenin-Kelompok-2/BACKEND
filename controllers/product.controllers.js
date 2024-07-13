@@ -4,7 +4,7 @@ const getProductDetail = async (req, res, next) => {
   try {
     const productData = req.params.id;
     const data = await products.findOne({
-      attributes: ["id", "name", "short_description", "release_date", "developer", "publisher", "product_thumbnail", "video"],
+      attributes: ["id", "name", "short_description", "release_date", "developer", "publisher", "product_thumbnail", "video","description"],
       where: {
         id: req.params.id,
       },
