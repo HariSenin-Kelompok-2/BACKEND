@@ -145,4 +145,9 @@ const deleteAllCarts = async (req, res) => {
   }
 };
 
-module.exports = { getCarts, addCart, deleteCartbyId, deleteAllCarts };
+module.exports = {
+  getCarts,
+  addCart,
+  deleteCartbyId,
+  deleteAllCarts,
+};
