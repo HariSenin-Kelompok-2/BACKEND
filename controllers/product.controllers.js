@@ -18,7 +18,7 @@ const getProductDetail = async (req, res, next) => {
         },
         {
           model: PriceList,
-          attributes: ["id", "price", "discount"],
+          attributes: ["id", "price", "discount", "offerName"],
         },
         {
           model: Feature,
