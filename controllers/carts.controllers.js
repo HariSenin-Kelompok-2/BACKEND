@@ -61,7 +61,6 @@ const addCart = async (req, res) => {
     }
 
     const cart = await Carts.create({
-      id: crypto.randomUUID(),
       priceListId,
       userId,
     });
