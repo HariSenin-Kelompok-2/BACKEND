@@ -202,6 +202,17 @@ module.exports = {
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2479810/header.jpg?t=1719853075",
           video: "dangdutan2",
         },
+        {
+          name: "Monster Hunter: World",
+          short_description: "Welcome to a new world! In Monster Hunter: World, the latest installment in the series, you can enjoy the ultimate hunting experience, using everything at your disposal to hunt monsters in a new world teeming with surprises and excitement.",
+          // release_date:"kapan-kapan2",
+          description: "waw keren2",
+          developer: "CAPCOM Co., Ltd.",
+          publisher: "CAPCOM Co., Ltd.",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/header.jpg?t=1711328912",
+          video: "dangdutan2",
+        },
       ],
       {}
     );
