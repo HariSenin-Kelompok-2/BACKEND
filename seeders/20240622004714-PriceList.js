@@ -40,6 +40,36 @@ module.exports = {
           discount: 0,
           productId: 5,
         },
+        {
+          price: "59000",
+          discount: 0,
+          productId: 6,
+        },
+        {
+          price: "79000",
+          discount: 0,
+          productId: 7,
+        },
+        {
+          price: "39000",
+          discount: 0,
+          productId: 8,
+        },
+        {
+          price: "29000",
+          discount: 0,
+          productId: 9,
+        },
+        {
+          price: "49000",
+          discount: 0,
+          productId: 10,
+        },
+        {
+          price: "69000",
+          discount: 0,
+          productId: 11,
+        },
       ],
       {}
     );
