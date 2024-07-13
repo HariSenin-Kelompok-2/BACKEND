@@ -9,6 +9,10 @@ module.exports = {
         autoIncrement: true,
         type: Sequelize.INTEGER,
       },
+      offerName: {
+        allowNull: false,
+        type: Sequelize.STRING(50),
+      },
       price: {
         allowNull: false,
         type: Sequelize.STRING(20),

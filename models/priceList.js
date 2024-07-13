@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         type: DataTypes.INTEGER,
       },
+      offerName: {
+        allowNull: false,
+        type: DataTypes.STRING(50),
+      },
       price: {
         allowNull: false,
         type: DataTypes.STRING(20),

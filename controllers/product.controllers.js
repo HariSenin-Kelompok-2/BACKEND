@@ -66,7 +66,43 @@ const getProductDetail = async (req, res, next) => {
 };
 
 const getAllProduct = async (req, res, next) => {
-  const data = await products.findAll({ include: [PriceList] });
+  const data = await products.findAll({ include: [
+    {
+      model: Category,
+      attributes: ["id", "name"],
+      through: {
+        attributes: []
+      }
+    },
+    {
+      model: PriceList,
+      attributes: ["id", "price", "discount"],
+    },
+    {
+      model: Feature,
+      as: "productFeatures",
+      attributes: ["id", "name", "icon"],
+    },
+    {
+      model: SysReqs,
+      attributes: ["id", "productId", "recommended", "osId", "processor", "memory", "graphics", "directX", "storage"],
+      include: [
+        {
+          model: CategorySysReq,
+        },
+      ],
+    },
+    {
+      model: Review,
+    },
+    {
+      model: ScrollThumbnail,
+      attributes: ["id", "productId", "img"],
+    },
+    {
+      model: descImg,
+    },
+  ], });
   return res.status(200).json({
     code: 200,
     message: "success",
