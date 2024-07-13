@@ -136,6 +136,17 @@ module.exports = {
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2369390/header.jpg?t=1706823201",
           video: "dangdutan2",
         },
+        {
+          name: "Once Human",
+          short_description: "Once Human is a multiplayer open-world survival game set in a strange, post-apocalyptic future. Unite with friends to fight monstrous enemies, uncover secret plots, compete for resources, and build your own territory. Once, you were merely human. Now, you have the power to remake the world.",
+          // release_date:"kapan-kapan2",
+          description: "waw keren2",
+          developer: "Starry Studio",
+          publisher: "Starry Studio",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2139460/header.jpg?t=1720769375",
+          video: "dangdutan2",
+        },
       ],
       {}
     );

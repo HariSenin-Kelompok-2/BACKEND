@@ -57,6 +57,10 @@ module.exports = {
         productId: 11,
         categoryId: 3,
       },
+      {
+        productId: 12,
+        categoryId: 1,
+      },
     ], {});
   },
 
