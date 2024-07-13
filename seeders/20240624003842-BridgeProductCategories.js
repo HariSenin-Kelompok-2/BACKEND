@@ -85,6 +85,14 @@ module.exports = {
         productId: 18,
         categoryId: 1,
       },
+      {
+        productId: 19,
+        categoryId: 1,
+      },
+      {
+        productId: 20,
+        categoryId: 1,
+      },
     ], {});
   },
 

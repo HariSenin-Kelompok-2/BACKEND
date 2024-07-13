@@ -99,6 +99,60 @@ module.exports = {
           discount: 0,
           productId: 11,
         },
+        {
+          offerName: "",
+          price: "99000",
+          discount: 0,
+          productId: 12,
+        },
+        {
+          offerName: "",
+          price: "100000",
+          discount: 50,
+          productId: 13,
+        },
+        {
+          offerName: "",
+          price: "699000",
+          discount: 0,
+          productId: 14,
+        },
+        {
+          offerName: "",
+          price: "689000",
+          discount: 0,
+          productId: 15,
+        },
+        {
+          offerName: "",
+          price: "79000",
+          discount: 0,
+          productId: 16,
+        },
+        {
+          offerName: "",
+          price: "39000",
+          discount: 0,
+          productId: 17,
+        },
+        {
+          offerName: "",
+          price: "229000",
+          discount: 0,
+          productId: 18,
+        },
+        {
+          offerName: "",
+          price: "449000",
+          discount: 0,
+          productId: 19,
+        },
+        {
+          offerName: "",
+          price: "679000",
+          discount: 40,
+          productId: 20,
+        },
       ],
       {}
     );

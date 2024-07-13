@@ -82,6 +82,9 @@ const getAllProduct = async (req, res, next) => {
       model: Feature,
       as: "productFeatures",
       attributes: ["id", "name", "icon"],
+      through: {
+        attributes: []
+      }
     },
     {
       model: SysReqs,
