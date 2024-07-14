@@ -9,6 +9,7 @@ const getCarts = async (req, res) => {
         { model: Users, attributes: ["id", "username", "email"] },
         {
           model: PriceList,
+          attributes: ["id", "offerName", "price", "discount"],
           include: [
             {
               model: products,

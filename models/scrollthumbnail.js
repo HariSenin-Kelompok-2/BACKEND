@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class ScrollThumbnail extends Model {
     /**
@@ -11,35 +9,42 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      ScrollThumbnail.belongsTo(models.products)
+      ScrollThumbnail.belongsTo(models.products);
     }
   }
-  ScrollThumbnail.init({
-    id: {
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-      type: DataTypes.INTEGER,
+  ScrollThumbnail.init(
+    {
+      id: {
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+        type: DataTypes.INTEGER,
+      },
+      productId: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+      },
+      img: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      type: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
     },
-    productId: {
-      allowNull: false,
-      type: DataTypes.INTEGER
-    },
-    img: {
-      allowNull: false,
-      type: DataTypes.TEXT
-    },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE
+    {
+      sequelize,
+      modelName: "ScrollThumbnail",
     }
-  }, {
-    sequelize,
-    modelName: 'ScrollThumbnail',
-  });
+  );
   return ScrollThumbnail;
 };
