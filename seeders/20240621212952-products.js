@@ -42,7 +42,8 @@ module.exports = {
           publisher: "FromSoftware Inc.",
           product_thumbnail:
             "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header_alt_assets_2.jpg?t=1720627962",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/256889456/movie480_vp9.webm?t=1654109241",
         },
         {
           name: "Forza Horizon 5 - Standard Edition",

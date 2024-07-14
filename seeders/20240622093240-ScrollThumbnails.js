@@ -15,8 +15,14 @@ module.exports = {
     Example: await queryInterface.bulkInsert(
       "ScrollThumbnails",
       [
+        // god of war
         {
           img: "https://cdn.akamai.steamstatic.com/steam/apps/256864004/movie480_vp9.webm?t=1639001817",
+          productId: 1,
+          type: "video",
+        },
+        {
+          img: "https://cdn.akamai.steamstatic.com/steam/apps/256852991/movie480_vp9.webm?t=1634742079",
           productId: 1,
           type: "video",
         },
@@ -45,11 +51,45 @@ module.exports = {
           productId: 1,
           type: "img",
         }, // berhenti di pic 4 gow
+        // satu product maks 7
+
+        // elden ring
         {
-          img: "zzz",
+          img: "https://cdn.akamai.steamstatic.com/steam/apps/256889456/movie480_vp9.webm?t=1654109241",
+          productId: 2,
+          type: "video",
+        },
+        {
+          img: "https://cdn.akamai.steamstatic.com/steam/apps/256864892/movie480_vp9.webm?t=1645830851",
+          productId: 2,
+          type: "video",
+        },
+        {
+          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_943bf6fe62352757d9070c1d33e50b92fe8539f1.600x338.jpg?t=1720627962",
           productId: 2,
           type: "img",
         },
+        {
+          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_dcdac9e4b26ac0ee5248bfd2967d764fd00cdb42.600x338.jpg?t=1720627962",
+          productId: 2,
+          type: "img",
+        },
+        {
+          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_3c41384a24d86dddd58a8f61db77f9dc0bfda8b5.600x338.jpg?t=1720627962",
+          productId: 2,
+          type: "img",
+        },
+        {
+          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_e0316c76f8197405c1312d072b84331dd735d60b.600x338.jpg?t=1720627962",
+          productId: 2,
+          type: "img",
+        },
+        {
+          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1245620/ss_ef61b771ee6b269b1f0cb484233e07a0bfb5f81b.600x338.jpg?t=1720627962",
+          productId: 2,
+          type: "img",
+        },
+        // 
       ],
       {}
     );
