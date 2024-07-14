@@ -582,7 +582,7 @@ module.exports = {
           type: "video",
         },
         {
-          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/ss_8b29f7e1ce9a8b9313dc3eb50dbe76a4cf94eef9.600x338.jpg?t=1719545479",
+          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/ss_d0314b4c134329a483b5e43af951f60274abc66b.1920x1080.jpg?t=1719545479",
           productId: 19,
           type: "img",
         },
@@ -592,17 +592,7 @@ module.exports = {
           type: "img",
         },
         {
-          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/ss_8b29f7e1ce9a8b9313dc3eb50dbe76a4cf94eef9.600x338.jpg?t=1719545479",
-          productId: 19,
-          type: "img",
-        },
-        {
-          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/ss_2c265df38c3d2d393d74ee8e74d79bdafa16b143.600x338.jpg?t=1719545479",
-          productId: 19,
-          type: "img",
-        },
-        {
-          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/ss_2c265df38c3d2d393d74ee8e74d79bdafa16b143.600x338.jpg?t=1719545479",
+          img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/ss_2c265df38c3d2d393d74ee8e74d79bdafa16b143.1920x1080.jpg?t=1719545479",
           productId: 19,
           type: "img",
         },
