@@ -1,10 +1,30 @@
-const { products, Category, PriceList, Feature, SysReqs, CategorySysReq, Review, ScrollThumbnail, descImg } = require("../models");
+const {
+  products,
+  Category,
+  PriceList,
+  Feature,
+  SysReqs,
+  CategorySysReq,
+  Review,
+  ScrollThumbnail,
+  descImg,
+} = require("../models");
 
 const getProductDetail = async (req, res, next) => {
   try {
     const productData = req.params.id;
     const data = await products.findOne({
-      attributes: ["id", "name", "short_description", "release_date", "developer", "publisher", "product_thumbnail", "video","description"],
+      attributes: [
+        "id",
+        "name",
+        "short_description",
+        "release_date",
+        "developer",
+        "publisher",
+        "product_thumbnail",
+        "video",
+        "description",
+      ],
       where: {
         id: req.params.id,
       },
@@ -13,12 +33,12 @@ const getProductDetail = async (req, res, next) => {
           model: Category,
           attributes: ["id", "name"],
           through: {
-            attributes: []
-          }
+            attributes: [],
+          },
         },
         {
           model: PriceList,
-          attributes: ["id", "price", "discount","offerName"],
+          attributes: ["id", "price", "discount", "offerName"],
         },
         {
           model: Feature,
@@ -27,7 +47,17 @@ const getProductDetail = async (req, res, next) => {
         },
         {
           model: SysReqs,
-          attributes: ["id", "productId", "recommended", "osId", "processor", "memory", "graphics", "directX", "storage"],
+          attributes: [
+            "id",
+            "productId",
+            "recommended",
+            "osId",
+            "processor",
+            "memory",
+            "graphics",
+            "directX",
+            "storage",
+          ],
           include: [
             {
               model: CategorySysReq,
@@ -39,7 +69,7 @@ const getProductDetail = async (req, res, next) => {
         },
         {
           model: ScrollThumbnail,
-          attributes: ["id", "productId", "img"],
+          attributes: ["id", "productId", "img", "type"],
         },
         {
           model: descImg,
@@ -60,52 +90,64 @@ const getProductDetail = async (req, res, next) => {
     return res.status(404).json({
       code: 404,
       message: "Page Not Found",
-      error
+      error,
     });
   }
 };
 
 const getAllProduct = async (req, res, next) => {
-  const data = await products.findAll({ include: [
-    {
-      model: Category,
-      attributes: ["id", "name"],
-      through: {
-        attributes: []
-      }
-    },
-    {
-      model: PriceList,
-      attributes: ["id", "price", "discount"],
-    },
-    {
-      model: Feature,
-      as: "productFeatures",
-      attributes: ["id", "name", "icon"],
-      through: {
-        attributes: []
-      }
-    },
-    {
-      model: SysReqs,
-      attributes: ["id", "productId", "recommended", "osId", "processor", "memory", "graphics", "directX", "storage"],
-      include: [
-        {
-          model: CategorySysReq,
+  const data = await products.findAll({
+    include: [
+      {
+        model: Category,
+        attributes: ["id", "name"],
+        through: {
+          attributes: [],
         },
-      ],
-    },
-    {
-      model: Review,
-    },
-    {
-      model: ScrollThumbnail,
-      attributes: ["id", "productId", "img"],
-    },
-    {
-      model: descImg,
-    },
-  ], });
+      },
+      {
+        model: PriceList,
+        attributes: ["id", "price", "discount"],
+      },
+      {
+        model: Feature,
+        as: "productFeatures",
+        attributes: ["id", "name", "icon"],
+        through: {
+          attributes: [],
+        },
+      },
+      {
+        model: SysReqs,
+        attributes: [
+          "id",
+          "productId",
+          "recommended",
+          "osId",
+          "processor",
+          "memory",
+          "graphics",
+          "directX",
+          "storage",
+        ],
+        include: [
+          {
+            model: CategorySysReq,
+          },
+        ],
+      },
+      {
+        model: Review,
+      },
+      {
+        model: ScrollThumbnail,
+        attributes: ["id", "productId", "img", "type"],
+      },
+      {
+        model: descImg,
+      },
+    ],
+  });
   return res.status(200).json({
     code: 200,
     message: "success",
