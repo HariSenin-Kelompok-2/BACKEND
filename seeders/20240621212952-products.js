@@ -92,7 +92,8 @@ module.exports = {
           publisher: "Nexon",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2074920/header.jpg?t=1719986463",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/257031929/movie480_vp9.webm?t=1719396909",
         },
         {
           name: "HELLDIVERS 2",
