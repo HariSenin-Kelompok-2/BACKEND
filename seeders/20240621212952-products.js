@@ -92,7 +92,8 @@ module.exports = {
           publisher: "Nexon",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2074920/header.jpg?t=1719986463",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/257031929/movie480_vp9.webm?t=1719396909",
         },
         {
           name: "HELLDIVERS 2",
@@ -106,7 +107,8 @@ module.exports = {
           publisher: "Arrowhead Game Studios",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg?t=1717621025",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/256994373/movie480_vp9.webm?t=1705428404",
         },
         {
           name: "Anger Foot",
@@ -120,7 +122,8 @@ module.exports = {
           publisher: "Devolver Digital",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1978590/header.jpg?t=1720791250",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/257036936/movie480_vp9.webm?t=1720718148",
         },
         {
           name: "Exoprimal",
@@ -134,7 +137,8 @@ module.exports = {
           publisher: "CAPCOM",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286320/header.jpg?t=1720747059",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/256959569/movie480_vp9.webm?t=1690164923",
         },
         {
           name: "Sea of Thieves: 2024 Edition",
@@ -148,7 +152,8 @@ module.exports = {
           publisher: "Xbox Game Studio",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172620/header.jpg?t=1720175247",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/257019754/movie480_vp9.webm?t=1714482544",
         },
         {
           name: "Far Cry 6",
@@ -162,7 +167,8 @@ module.exports = {
           publisher: "Ubisoft",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2369390/header.jpg?t=1706823201",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/256941289/movie480_vp9.webm?t=1682096985",
         },
         {
           name: "Once Human",
@@ -176,7 +182,8 @@ module.exports = {
           publisher: "Starry Studio",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2139460/header.jpg?t=1720769375",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/256998828/movie480_vp9.webm?t=1707101835",
         },
         {
           name: "Destiny 2",
@@ -190,7 +197,8 @@ module.exports = {
           publisher: "Bungie",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/header.jpg?t=1720218333",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/257033482/movie480_vp9.webm?t=1719265609",
         },
         {
           name: "Hunt: Showdown",
@@ -204,7 +212,8 @@ module.exports = {
           publisher: "Crytek",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/header.jpg?t=1719844589",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/256893785/movie480_vp9.webm?t=1656430960",
         },
         {
           name: "Ghost of Tsushima DIRECTOR'S CUT",
@@ -218,7 +227,8 @@ module.exports = {
           publisher: "PlayStation Publishing LLC",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/header.jpg?t=1717622497",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/257022043/movie480_vp9.webm?t=1716411558",
         },
         {
           name: "Euro Truck Simulator 2",
@@ -232,7 +242,8 @@ module.exports = {
           publisher: "SCS Software",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/227300/header.jpg?t=1718786615",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/257023925/movie480_vp9.webm?t=1715926447",
         },
         {
           name: "Gray Zone Warfare",
@@ -246,7 +257,8 @@ module.exports = {
           publisher: "MADFINGER Games, a.s.",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2479810/header.jpg?t=1719853075",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/257019639/movie480_vp9.webm?t=1714481989",
         },
         {
           name: "Monster Hunter: World",
@@ -260,7 +272,8 @@ module.exports = {
           publisher: "CAPCOM Co., Ltd.",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/header.jpg?t=1711328912",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/256769022/movie480.webm?t=1596524406",
         },
         {
           name: "Nier Automata",
@@ -274,7 +287,8 @@ module.exports = {
           publisher: "Square Enix",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/header.jpg?t=1719545479",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/256743980/movie480.webm?t=1551200563",
         },
         {
           name: "V Rising",
@@ -288,7 +302,8 @@ module.exports = {
           publisher: "Stunlock Studio",
           product_thumbnail:
             "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1604030/header.jpg?t=1716820827",
-          video: "dangdutan2",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/257020634/movie480_vp9.webm?t=1714748047",
         },
       ],
       {}
