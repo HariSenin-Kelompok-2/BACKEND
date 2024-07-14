@@ -25,19 +25,23 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Santa Monica Studio",
           publisher: "PlayStation Publishing LLC",
-          product_thumbnail: "https://cdn.akamai.steamstatic.com/steam/apps/1593500/header.jpg?t=1720454875",
-          video: "dangdutan",
+          product_thumbnail:
+            "https://cdn.akamai.steamstatic.com/steam/apps/1593500/header.jpg?t=1720454875",
+          video:
+            "https://cdn.akamai.steamstatic.com/steam/apps/256864004/movie480_vp9.webm?t=1639001817",
         },
         {
           name: "Elden Ring",
-          short_description: "THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
+          short_description:
+            "THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
           release_date: new Date(),
           description: `Nulla non nisi quis libero pellentesque ultricies ullamcorper ut nibh. Maecenas rhoncus massa ante, pretium volutpat turpis suscipit sollicitudin. Vivamus id gravida erat. Praesent enim risus, placerat sit amet porta porttitor, dignissim id nulla. Donec condimentum, odio et vehicula aliquam, sapien turpis lobortis urna, dapibus eleifend sapien erat sit amet odio. Sed pretium, nibh id blandit dapibus, enim lorem vulputate velit, eu facilisis velit lacus at elit. Suspendisse ac sodales nibh, sit amet laoreet sapien. Fusce tempus vulputate velit a interdum. Aenean rhoncus augue a orci egestas, vitae lacinia odio vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum gravida dolor arcu, nec facilisis leo egestas vitae.
           
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "FromSoftware Inc.",
           publisher: "FromSoftware Inc.",
-          product_thumbnail: "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header_alt_assets_2.jpg?t=1720627962",
+          product_thumbnail:
+            "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header_alt_assets_2.jpg?t=1720627962",
           video: "dangdutan2",
         },
         {
@@ -49,7 +53,8 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "dev2",
           publisher: "publisher3",
-          product_thumbnail: "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg?t=1718730250",
+          product_thumbnail:
+            "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg?t=1718730250",
           video: "dangdutan2",
         },
         {
@@ -59,7 +64,8 @@ module.exports = {
           description: "waw keren2",
           developer: "dev2",
           publisher: "publisher3",
-          product_thumbnail: "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg?t=1718730250",
+          product_thumbnail:
+            "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg?t=1718730250",
           video: "dangdutan2",
         },
         {
@@ -69,7 +75,8 @@ module.exports = {
           description: "waw keren2",
           developer: "dev2",
           publisher: "publisher3",
-          product_thumbnail: "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg?t=1718730250",
+          product_thumbnail:
+            "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg?t=1718730250",
           video: "dangdutan2",
         },
         {
@@ -82,43 +89,50 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Nexon",
           publisher: "Nexon",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2074920/header.jpg?t=1719986463",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2074920/header.jpg?t=1719986463",
           video: "dangdutan2",
         },
         {
           name: "HELLDIVERS 2",
-          short_description: "The Galaxy’s Last Line of Offence. Enlist in the Helldivers and join the fight for freedom across a hostile galaxy in a fast, frantic, and ferocious third-person shooter.",
+          short_description:
+            "The Galaxy’s Last Line of Offence. Enlist in the Helldivers and join the fight for freedom across a hostile galaxy in a fast, frantic, and ferocious third-person shooter.",
           release_date: new Date(),
           description: `Nulla non nisi quis libero pellentesque ultricies ullamcorper ut nibh. Maecenas rhoncus massa ante, pretium volutpat turpis suscipit sollicitudin. Vivamus id gravida erat. Praesent enim risus, placerat sit amet porta porttitor, dignissim id nulla. Donec condimentum, odio et vehicula aliquam, sapien turpis lobortis urna, dapibus eleifend sapien erat sit amet odio. Sed pretium, nibh id blandit dapibus, enim lorem vulputate velit, eu facilisis velit lacus at elit. Suspendisse ac sodales nibh, sit amet laoreet sapien. Fusce tempus vulputate velit a interdum. Aenean rhoncus augue a orci egestas, vitae lacinia odio vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum gravida dolor arcu, nec facilisis leo egestas vitae.
           
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Arrowhead Game Studios",
           publisher: "Arrowhead Game Studios",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg?t=1717621025",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg?t=1717621025",
           video: "dangdutan2",
         },
         {
           name: "Anger Foot",
-          short_description: "Anger Foot is a lightning fast action FPS where the only things harder than your ass kicking feet are the ass kicking beats.",
+          short_description:
+            "Anger Foot is a lightning fast action FPS where the only things harder than your ass kicking feet are the ass kicking beats.",
           release_date: new Date(),
           description: `Nulla non nisi quis libero pellentesque ultricies ullamcorper ut nibh. Maecenas rhoncus massa ante, pretium volutpat turpis suscipit sollicitudin. Vivamus id gravida erat. Praesent enim risus, placerat sit amet porta porttitor, dignissim id nulla. Donec condimentum, odio et vehicula aliquam, sapien turpis lobortis urna, dapibus eleifend sapien erat sit amet odio. Sed pretium, nibh id blandit dapibus, enim lorem vulputate velit, eu facilisis velit lacus at elit. Suspendisse ac sodales nibh, sit amet laoreet sapien. Fusce tempus vulputate velit a interdum. Aenean rhoncus augue a orci egestas, vitae lacinia odio vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum gravida dolor arcu, nec facilisis leo egestas vitae.
           
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Free Lives",
           publisher: "Devolver Digital",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1978590/header.jpg?t=1720791250",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1978590/header.jpg?t=1720791250",
           video: "dangdutan2",
         },
         {
           name: "Exoprimal",
-          short_description: "Exoprimal is an online, team-based action game that pits humanity's cutting-edge exosuit technology against history's most ferocious beasts – dinosaurs.",
+          short_description:
+            "Exoprimal is an online, team-based action game that pits humanity's cutting-edge exosuit technology against history's most ferocious beasts – dinosaurs.",
           release_date: new Date(),
           description: `Nulla non nisi quis libero pellentesque ultricies ullamcorper ut nibh. Maecenas rhoncus massa ante, pretium volutpat turpis suscipit sollicitudin. Vivamus id gravida erat. Praesent enim risus, placerat sit amet porta porttitor, dignissim id nulla. Donec condimentum, odio et vehicula aliquam, sapien turpis lobortis urna, dapibus eleifend sapien erat sit amet odio. Sed pretium, nibh id blandit dapibus, enim lorem vulputate velit, eu facilisis velit lacus at elit. Suspendisse ac sodales nibh, sit amet laoreet sapien. Fusce tempus vulputate velit a interdum. Aenean rhoncus augue a orci egestas, vitae lacinia odio vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum gravida dolor arcu, nec facilisis leo egestas vitae.
           
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "CAPCOM",
           publisher: "CAPCOM",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286320/header.jpg?t=1720747059",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1286320/header.jpg?t=1720747059",
           video: "dangdutan2",
         },
         {
@@ -131,19 +145,22 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Rare",
           publisher: "Xbox Game Studio",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172620/header.jpg?t=1720175247",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172620/header.jpg?t=1720175247",
           video: "dangdutan2",
         },
         {
           name: "Far Cry 6",
-          short_description: "Enter the adrenaline-filled world of a modern-day guerrilla revolution. With stunning vistas, visceral gunplay, and a huge variety of gameplay experiences, there's never been a better time to join the fight.",
+          short_description:
+            "Enter the adrenaline-filled world of a modern-day guerrilla revolution. With stunning vistas, visceral gunplay, and a huge variety of gameplay experiences, there's never been a better time to join the fight.",
           release_date: new Date(),
           description: `Nulla non nisi quis libero pellentesque ultricies ullamcorper ut nibh. Maecenas rhoncus massa ante, pretium volutpat turpis suscipit sollicitudin. Vivamus id gravida erat. Praesent enim risus, placerat sit amet porta porttitor, dignissim id nulla. Donec condimentum, odio et vehicula aliquam, sapien turpis lobortis urna, dapibus eleifend sapien erat sit amet odio. Sed pretium, nibh id blandit dapibus, enim lorem vulputate velit, eu facilisis velit lacus at elit. Suspendisse ac sodales nibh, sit amet laoreet sapien. Fusce tempus vulputate velit a interdum. Aenean rhoncus augue a orci egestas, vitae lacinia odio vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum gravida dolor arcu, nec facilisis leo egestas vitae.
           
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Ubisoft",
           publisher: "Ubisoft",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2369390/header.jpg?t=1706823201",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2369390/header.jpg?t=1706823201",
           video: "dangdutan2",
         },
         {
@@ -156,19 +173,22 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Starry Studio",
           publisher: "Starry Studio",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2139460/header.jpg?t=1720769375",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2139460/header.jpg?t=1720769375",
           video: "dangdutan2",
         },
         {
           name: "Destiny 2",
-          short_description: "Destiny 2 is an action MMO with a single evolving world that you and your friends can join anytime, anywhere, absolutely free.",
+          short_description:
+            "Destiny 2 is an action MMO with a single evolving world that you and your friends can join anytime, anywhere, absolutely free.",
           release_date: new Date(),
           description: `Nulla non nisi quis libero pellentesque ultricies ullamcorper ut nibh. Maecenas rhoncus massa ante, pretium volutpat turpis suscipit sollicitudin. Vivamus id gravida erat. Praesent enim risus, placerat sit amet porta porttitor, dignissim id nulla. Donec condimentum, odio et vehicula aliquam, sapien turpis lobortis urna, dapibus eleifend sapien erat sit amet odio. Sed pretium, nibh id blandit dapibus, enim lorem vulputate velit, eu facilisis velit lacus at elit. Suspendisse ac sodales nibh, sit amet laoreet sapien. Fusce tempus vulputate velit a interdum. Aenean rhoncus augue a orci egestas, vitae lacinia odio vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum gravida dolor arcu, nec facilisis leo egestas vitae.
           
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Bungie",
           publisher: "Bungie",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/header.jpg?t=1720218333",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/header.jpg?t=1720218333",
           video: "dangdutan2",
         },
         {
@@ -181,7 +201,8 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Crytek",
           publisher: "Crytek",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/header.jpg?t=1719844589",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/header.jpg?t=1719844589",
           video: "dangdutan2",
         },
         {
@@ -194,7 +215,8 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Sucker Punch Productions, Nixxes Software",
           publisher: "PlayStation Publishing LLC",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/header.jpg?t=1717622497",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215430/header.jpg?t=1717622497",
           video: "dangdutan2",
         },
         {
@@ -207,7 +229,8 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "SCS Software",
           publisher: "SCS Software",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/227300/header.jpg?t=1718786615",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/227300/header.jpg?t=1718786615",
           video: "dangdutan2",
         },
         {
@@ -220,7 +243,8 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "MADFINGER Games, a.s.",
           publisher: "MADFINGER Games, a.s.",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2479810/header.jpg?t=1719853075",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2479810/header.jpg?t=1719853075",
           video: "dangdutan2",
         },
         {
@@ -233,7 +257,8 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "CAPCOM Co., Ltd.",
           publisher: "CAPCOM Co., Ltd.",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/header.jpg?t=1711328912",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/582010/header.jpg?t=1711328912",
           video: "dangdutan2",
         },
         {
@@ -246,7 +271,8 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Square Enix",
           publisher: "Square Enix",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/header.jpg?t=1719545479",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/524220/header.jpg?t=1719545479",
           video: "dangdutan2",
         },
         {
@@ -259,7 +285,8 @@ module.exports = {
           Quisque lectus mi, pretium sit amet vehicula sed, tincidunt at ex. Aliquam elementum ultricies enim et porta. Proin auctor varius orci in pellentesque. Pellentesque ligula nisi, rhoncus in metus ac, commodo pulvinar ante. Suspendisse laoreet orci tellus, vitae porttitor lacus vestibulum id. Aenean dapibus bibendum sapien quis efficitur. Etiam euismod aliquet sollicitudin. Phasellus pharetra vitae sapien at pellentesque. Vestibulum consectetur orci in luctus fermentum. Suspendisse mollis ligula eget nunc ultrices, egestas congue mi malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla semper lacus vitae tortor pharetra, nec tempor est bibendum. Duis a bibendum est, et accumsan leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt purus eleifend, convallis mi sed, pellentesque leo. Integer iaculis eu dolor vitae porttitor.`,
           developer: "Stunlock Studio",
           publisher: "Stunlock Studio",
-          product_thumbnail: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1604030/header.jpg?t=1716820827",
+          product_thumbnail:
+            "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1604030/header.jpg?t=1716820827",
           video: "dangdutan2",
         },
       ],
