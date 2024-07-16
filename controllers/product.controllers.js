@@ -24,6 +24,7 @@ const getProductDetail = async (req, res, next) => {
         "product_thumbnail",
         "video",
         "description",
+        "jumbotron_image"
       ],
       where: {
         id: req.params.id,

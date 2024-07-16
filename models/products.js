@@ -60,6 +60,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      jumbotron_image: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
