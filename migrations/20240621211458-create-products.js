@@ -26,6 +26,10 @@ module.exports = {
         allowNull: false,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
+      jumbotron_image: {
+        type: Sequelize.TEXT,
+        allowNull: true,
+      },
       developer: {
         type: Sequelize.STRING,
         allowNull: false
