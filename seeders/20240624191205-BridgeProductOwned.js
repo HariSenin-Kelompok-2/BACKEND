@@ -2,7 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up (queryInterface) {
     /**
      * Add seed commands here.
      *
@@ -25,14 +25,10 @@ module.exports = {
         productId: 2,
         userId: "cc75df37-ce40-4395-ae31-0a7e982cf68e",
       },
-      {
-        productId: 2,
-        userId: "b2c8d9b5-64a1-4688-a4f6-fd2eadb0c52e",
-      }
     ], {});
   },
 
-  async down (queryInterface, Sequelize) {
+  async down (queryInterface) {
     /**
      * Add commands to revert seed here.
      *

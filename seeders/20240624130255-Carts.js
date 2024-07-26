@@ -17,11 +17,11 @@ module.exports = {
       [
         {
           priceListId: 1,
-          UserId: "5194f115-92c4-405c-905e-a37aaee94ad4",
+          UserId: "b2c8d9b5-64a1-4688-a4f6-fd2eadb0c52e",
         },
         {
           priceListId: 2,
-          UserId: "5194f115-92c4-405c-905e-a37aaee94ad4",
+          UserId: "b2c8d9b5-64a1-4688-a4f6-fd2eadb0c52e ",
         },
       ],
       {}

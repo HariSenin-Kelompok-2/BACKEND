@@ -3,9 +3,14 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('BridgeProductOwneds', {
-      userId: {
+      id: {
         allowNull: false,
         primaryKey: true,
+        autoIncrement: true,
+        type: Sequelize.INTEGER,
+      },
+      userId: {
+        allowNull: false,
         type: Sequelize.UUID,
         references: {
           model:"Users",
@@ -16,7 +21,6 @@ module.exports = {
       },
       productId: {
         allowNull: false,
-        primaryKey: true,
         type: Sequelize.INTEGER,
         references: {
           model:"products",
@@ -37,7 +41,7 @@ module.exports = {
       }
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('BridgeProductOwneds');
   }
 };

@@ -14,5 +14,6 @@ router.delete(
   AuthMiddlewares.checkToken,
   CartsControllers.deleteAllCarts
 );
+router.post("/carts/payment", AuthMiddlewares.checkToken, CartsControllers.cartsPayment);
 
 module.exports = router;
