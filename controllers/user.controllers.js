@@ -1,7 +1,7 @@
 const { Users } = require("../models");
 const { AuthServices, UserQuery, RegionQuery } = require("../services");
 
-const getUserDetail = async (req, res, next) => {
+const getUserDetail = async (req, res) => {
   try {
     const data = await UserQuery.getUserDetailWhere({ id: req.currentUser.id });
 
@@ -15,7 +15,7 @@ const getUserDetail = async (req, res, next) => {
   }
 };
 
-const registerUser = async (req, res, next) => {
+const registerUser = async (req, res) => {
   try {
     const { username, email, password, passwordConfirm, region } = req.body;
 
@@ -75,12 +75,11 @@ const registerUser = async (req, res, next) => {
     res.status(500).json({
       message: "Internal server Error",
       error: error.message,
-      // error,
     });
   }
 };
 
-const loginUser = async (req, res, next) => {
+const loginUser = async (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -109,7 +108,7 @@ const loginUser = async (req, res, next) => {
   }
 };
 
-const logoutUser = async (req, res, next) => {
+const logoutUser = async (req, res) => {
   res.clearCookie('jwt', {
     httpOnly: true,
   });
@@ -119,7 +118,7 @@ const logoutUser = async (req, res, next) => {
   })
 }
 
-const updateUsers = async (req, res, next) => {
+const updateUsers = async (req, res) => {
   try {
     const { username, email, password, passwordConfirm, region, bio } = req.body;
 
@@ -192,7 +191,7 @@ const updateUsers = async (req, res, next) => {
   }
 };
 
-const deleteUser = async (req, res, next) => {
+const deleteUser = async (req, res) => {
   try {
     const data = await UserQuery.getUserWhere({ id: req.currentUser.id });
 

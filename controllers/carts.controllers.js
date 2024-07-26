@@ -146,7 +146,7 @@ const deleteAllCarts = async (req, res) => {
 const cartsPayment = async (req, res) => {
   try {
     const userId = req.currentUser.id;
-
+    
     const existingCarts = await Carts.findAll({
       where: {
         userId,
